@@ -3,6 +3,9 @@ if [ -f $HOME/.bashrc ]; then
         source $HOME/.bashrc
 fi
 
+# set vi editing mode
+set -o vi
+
 # bash prompt becomes [“username@hostname:cwd $”]
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 
@@ -29,3 +32,6 @@ export NVM_DIR="$HOME/.nvm"
 # Ruby Version Manager
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# add MOTD
+sh /etc/motd.sh

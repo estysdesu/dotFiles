@@ -17,7 +17,14 @@ set ignorecase
 set smartcase
 
 let g:netrw_banner=0
-let g:netrw_liststyle = 3
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_winsize=15
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END 
 
 color pablo
 
@@ -26,6 +33,7 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'tpope/vim-vinegar', "file explorer extension on top of netrw
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
