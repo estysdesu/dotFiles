@@ -14,6 +14,8 @@ export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad # default
 alias ls='ls -GFh'
 
+alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'"
+
 # github.com/hkbakke/bash-insulter
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
