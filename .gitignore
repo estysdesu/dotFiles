@@ -6,6 +6,7 @@ venv/
 .pynb_checkpoints/
 .env
 *.swp
+Vendor/
 
 # Compiled source #
 ###################
