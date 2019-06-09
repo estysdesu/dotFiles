@@ -7,4 +7,5 @@ ln -sf $HOME/dotFiles/.vimrc $HOME/.vimrc
 ln -sf $HOME/dotFiles/.Brewfile $HOME/.Brewfile
 ln -sf $HOME/dotFiles/motd.sh /etc/motd.sh
 
+# vscode
 

@@ -6,14 +6,6 @@ fi
 # set vi editing mode
 set -o vi
 
-# bash prompt becomes [“username@hostname:cwd $”]
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-
-# bash prompt change to colorized
-export CLICOLOR=1
-export LSCOLORS=exfxcxdxbxegedabagacad # default
-alias ls='ls -GFh'
-
 # hide rm functionality to decrease bad habits
 alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'"
 
@@ -27,5 +19,29 @@ export GOPATH="${HOME}/localProjects/golang"
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
+# history
+export HISTCONTROL=ignoredups:erasedups # no duplicates
+shopt -s histappend # append history instead of overwrite file
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # append after every command
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # append, clear local, and reload from file after every command; keeps in sync
+
+# homebrew
+export HOMEBREW_AUTO_UPDATE_SECS=604800 # update only once a week
+
+# tmux
+tmux attach &> /dev/null # attach if there is already a session
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+
 # add MOTD
 sh /etc/motd.sh
+
+# bash prompt becomes [“username@hostname:cwd $”]
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+
+# bash prompt change to colorized
+export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad # default
+alias ls='ls -GFh'
+
