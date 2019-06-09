@@ -14,6 +14,19 @@ if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
 fi
 
+# Node Version Manager
+nvm_path () {
+	export NVM_DIR="$HOME/.nvm";
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";
+}
+
+ # Ruby Version Manager
+ rvm_path () {
+	 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"; 
+	 export PATH="$PATH:$HOME/.rvm/bin"; 
+ }
+
 # Golang
 export GOPATH="${HOME}/localProjects/golang"
 export GOROOT="$(brew --prefix golang)/libexec"
