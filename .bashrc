@@ -34,7 +34,7 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # append after every command
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # append, clear local, and reload from file after every command; keeps in sync
 
 # homebrew
-export HOMEBREW_AUTO_UPDATE_SECS=604800 # update only once a week
+export HOMEBREW_AUTO_UPDATE_SECS="604800" # update only once a week
 
 # tmux
 tmux attach &> /dev/null # attach if there is already a session
