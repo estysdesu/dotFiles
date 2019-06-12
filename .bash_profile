@@ -6,8 +6,13 @@ fi
 
 # set vi editing mode
 set -o vi
+
+# history
 set -o history
 set -o histexpand
+
+# check the window size after each command and, if necessary, update the values of LINES and COLUMNS
+shopt -s checkwinsize
 
 # history
 # export HISTCONTROL=ignoredups:erasedups # no duplicates
