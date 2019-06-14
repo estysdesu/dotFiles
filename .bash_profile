@@ -1,33 +1,13 @@
 # first source .bashrc
 if [ -f $HOME/.bashrc ]; then
         source $HOME/.bashrc
-
 fi
 
-# set vi editing mode
-set -o vi
-
-# history
-set -o history
-set -o histexpand
-
-# check the window size after each command and, if necessary, update the values of LINES and COLUMNS
-shopt -s checkwinsize
-
-# history
-# export HISTCONTROL=ignoredups:erasedups # no duplicates
-shopt -s histappend # append history instead of overwrite file
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # append after every command
-# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # append, clear local, and reload from file after every command; keeps in sync
-
-# homebrew
-export HOMEBREW_AUTO_UPDATE_SECS="604800" # update only once a week
-
-# tmux
-tmux attach &> /dev/null # attach if there is already a session
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
+# misc
+set -o vi # set vi editing mode
+export PROMPT_COMMAND="history -a; history -n" # share history between tabs by updating history on prompt load
+shopt -s checkwinsize # check & update window size after each command
+export HOMEBREW_AUTO_UPDATE_SECS="604800" # homebrew only only update only once a week
 
 # add scripts to the path if present
 if [ -d "$HOME/bin" ] ; then

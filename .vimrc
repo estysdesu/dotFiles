@@ -1,41 +1,35 @@
+"""""FILETYPE"""""
+filetype plugin indent on "detection, indentation, plugins for filetypes
 
-filetype plugin on
-filetype plugin indent on
-
-"syntax enable
+"""""MISC"""""
+color pablo
+syntax enable
 set encoding=utf-8
 set wrap
 set number
-set relativenumber
+"set relativenumber
 set backspace=indent,eol,start
-
 "set mouse=nicr
 set mouse=a "only allows for mouse scrolling
 
+"""""F&R"""""
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
+"""""NETRW"""""
 let g:netrw_banner=0
 let g:netrw_liststyle=3
-let g:netrw_browse_split=4
+let g:netrw_browse_split=2 "open in vertical split
 let g:netrw_altv=1
-let g:netrw_winsize=15
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END 
+let g:netrw_winsize=25 "window size of 25 cols
+source $HOME/.vim/myPlugins/netrwToggle.vim "<C-E> to toggle netrw
 
-color pablo
-
-" Plugins will be downloaded under the specified directory.
+"""""PLUGINS"""""
 call plug#begin('~/.vim/plugged')
 
-" Declare the list of plugins.
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-"Plug 'tpope/vim-vinegar', "file explorer extension on top of netrw
 
-" List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
