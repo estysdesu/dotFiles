@@ -8,6 +8,7 @@ set -o vi # set vi editing mode
 export PROMPT_COMMAND="history -a; history -n" # share history between tabs by updating history on prompt load
 shopt -s checkwinsize # check & update window size after each command
 export HOMEBREW_AUTO_UPDATE_SECS="604800" # homebrew only only update only once a week
+export DOTFILES="$HOME/dotFiles"
 
 # add scripts to the path if present
 if [ -d "$HOME/bin" ] ; then
