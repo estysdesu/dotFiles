@@ -1,13 +1,23 @@
-# Custom #
+# Misc #
+###################
+.env
+.vscode/
+*.swp
+
+# Go #
+###################
+vendor/
+
+# JS #
 ###################
 node_modules/
-.vscode/
+
+# Python #
+###################
 venv/
 .pynb_checkpoints/
-.env
-*.swp
-Vendor/
-__pycache__
+*.pyc
+__pycache__/
 
 # Compiled source #
 ###################
@@ -34,7 +44,7 @@ __pycache__
 # Logs and databases #
 ######################
 *.log
-#*.sql
+*.sql
 *.sqlite
 
 # OS generated files #
@@ -44,3 +54,4 @@ __pycache__
 ._*
 .Spotlight-V100
 .Trashes
+
