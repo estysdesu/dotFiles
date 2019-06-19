@@ -1,0 +1,20 @@
+// Gmsh Option File
+//
+// This file contains configuration options (preferences) that
+// are loaded each time Gmsh is launched. You can create this
+// file by hand, or let Gmsh generate it for you (with
+// 'File->Save Default Options'). This file can also be
+// automatically saved every time you quit Gmsh if the option
+// 'General.SaveOptions' is set.
+//
+General.Antialiasing = 1; // Use multisample antialiasing (will slow down rendering)
+General.BackgroundGradient = 3; // Draw background gradient (0: none, 1: vertical, 2: horizontal, 3: radial)
+General.BoundingBoxSize = 32.25335091896851; // Overall bounding box size (read-only)
+General.DrawBoundingBoxes = 1; // Draw bounding boxes
+General.MouseHoverMeshes = 1; // Enable mouse hover on meshes
+General.Terminal = 1; // Should information be printed on the terminal (if available)?
+General.Color.BackgroundGradient = {126,126,126}; // Background gradient color
+Geometry.HighlightOrphans = 1; // Highlight orphan entities (lines connected to a single surface, etc.)?
+Mesh.SurfaceFaces = 1; // Display faces of surface mesh?
+Mesh.Color.Lines = {78,78,78}; // Mesh line color
+Solver.AutoLoadDatabase = 1; // Automatically load the ONELAB database when launching a solver

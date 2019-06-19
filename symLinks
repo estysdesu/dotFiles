@@ -12,3 +12,5 @@ ln -sf $HOME/dotFiles/.tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/dotFiles/.leptonrc $HOME/.leptonrc
 ln -sfn $HOME/dotFiles/.vim/myPlugins $HOME/.vim/myPlugins
 ln -sf $HOME/dotFiles/.alacritty.yml $HOME/.alacritty.yml
+ln -sf $HOME/dotFiles/.gmshrc $HOME/.gmshrc
+ln -sf $HOME/dotFiles/.gmsh-options $HOME/.gmsh-options
