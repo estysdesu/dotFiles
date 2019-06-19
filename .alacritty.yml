@@ -170,9 +170,8 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
+# Colors
 colors:
-  # Default colors
   primary:
     background: '0x161616'
     foreground: '0xeaeaea'
@@ -366,10 +365,12 @@ live_config_reload: true
 #   - (macOS) /bin/bash --login
 #   - (Linux) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+  program: /usr/local/bin/bash
+  args:
+    - --login
+    - -c
+    - tmux attach -t base || tmux new -s base
 
 # Startup directory
 #

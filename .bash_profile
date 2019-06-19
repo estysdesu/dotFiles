@@ -55,4 +55,3 @@ export DOTFILES="$HOME/dotFiles"
 
 # execute MOTD
 sh $HOME/bin/motd
-
