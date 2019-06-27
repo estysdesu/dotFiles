@@ -49,7 +49,7 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true,
         "**/venv/**": true,
-        "**/__pycache__/**": true,
+        "**/__pycache__/**": true
     },
 
     // File Explorer
