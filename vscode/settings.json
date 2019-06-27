@@ -48,6 +48,7 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true,
         "**/venv/**": true,
+        "**/__pycach__/**": true,
     },
 
     // File Explorer
