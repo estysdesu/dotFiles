@@ -1,0 +1,93 @@
+{
+    // Editor
+    "editor.minimap.enabled": true,
+    "editor.minimap.maxColumn": 80,
+    "editor.wordWrap": "on",
+    "editor.trimAutoWhitespace": true,
+    "editor.smoothScrolling": true,
+    "editor.selectionHighlight": false,
+    "editor.mouseWheelZoom": true, // ctrl+scroll
+    "editor.formatOnSave": false, // may want to change
+    "editor.formatOnPaste": true, // may want to change
+    "editor.autoClosingQuotes": "beforeWhitespace",
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.acceptSuggestionOnEnter": "off", // urks me with `import numpy as np`
+    "editor.acceptSuggestionOnCommitCharacter": false,
+
+    // Workbench
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "file-icons",
+    "workbench.startupEditor": "none", // "readme"
+    "workbench.sideBar.location": "left", // "right"
+    "workbench.settings.openDefaultKeybindings": true,
+    "workbench.settings.openDefaultSettings": true,
+    "workbench.settings.editor": "json",
+    "workbench.fontAliasing": "auto",
+    "workbench.editor.swipeToNavigate": false, // may want to change
+    "workbench.editor.closeOnFileDelete": true, // dirty files never close
+
+    // Window
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+    "window.restoreWindows": "none",
+    "window.newWindowDimensions": "maximized",
+    "window.clickThroughInactive": false,
+
+    // Files
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300000,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": false,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/venv/**": true,
+    },
+
+    // File Explorer
+    "explorer.autoReveal": true, // may want to change
+    "explorer.confirmDelete": false,
+    "explorer.openEditors.visible": 4,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.sortOrder": "type",
+
+    // Search
+    "search.smartCase": true,
+    "search.useGlobalIgnoreFiles": false,
+    "search.useIgnoreFiles": false,
+
+    // Debug
+    "debug.openExplorerOnEnd": true,
+    "debug.toolBarLocation": "docked",
+    "launch": {
+        "configurations": [
+            {
+                "name": "Python: Main.py",
+                "type": "python",
+                "request": "launch",
+                "program": "${workspaceFolder}/main.py",
+                "console": "integratedTerminal"
+            }
+        ],
+        "compounds": []
+    },
+
+    // Extensions
+    "extensions.closeExtensionDetailsOnViewChange": false,
+
+    // Terminal
+    "terminal.explorerKind": "external",
+    "terminal.external.osxExec": "Alacritty.app",
+    "terminal.external.windowsExec": "C:\\Program Files\\Alacritty\\alacritty.exe",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+
+    // Breadcrumbs
+    "breadcrumbs.enabled": true,
+}

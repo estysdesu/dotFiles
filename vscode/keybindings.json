@@ -1,0 +1,11 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+r ctrl+t",
+        "command": "python.execInTerminal"
+    },
+    {
+        "key": "ctrl+r ctrl+j",
+        "command": "python.datascience.runFileInteractive"
+    }
+]
