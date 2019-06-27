@@ -5,6 +5,7 @@
     "editor.wordWrap": "on",
     "editor.trimAutoWhitespace": true,
     "editor.smoothScrolling": true,
+    "editor.mouseWheelScrollSensitivity": 2,
     "editor.selectionHighlight": false,
     "editor.mouseWheelZoom": true, // ctrl+scroll
     "editor.formatOnSave": false, // may want to change
