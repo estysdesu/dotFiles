@@ -14,3 +14,4 @@ ln -sf $HOME/dotFiles/.neofetch.conf $HOME/.config/neofetch/config.conf
 ln -sf $HOME/dotFiles/.tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/dotFiles/.vimrc $HOME/.vimrc
 ln -sfn $HOME/dotFiles/.vim/myPlugins $HOME/.vim/myPlugins
+ln -sf $HOME/dotFiles/vscode/* "$HOME/Library/Application Support/Code/User/"
