@@ -1,5 +1,4 @@
-# WiP
-DOTFILES=$${HOME}/dotFiles
+DOTFILES=${HOME}/dotFiles
 
 .PHONY: update
 
