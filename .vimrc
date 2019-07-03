@@ -11,6 +11,7 @@ set number
 set backspace=indent,eol,start
 "set mouse=nicr
 set mouse=a "only allows for mouse scrolling
+set nobackup "no backup files -- for windows those are *~ files
 
 """""F&R"""""
 set hlsearch

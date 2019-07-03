@@ -4,6 +4,11 @@ if [ -f $HOME/.bashrc ]; then
 fi
 
 ##### FUNCTIONS ##### 
+# reload bash profile
+re_bash () {
+	source $HOME/.bash_profile
+}
+
 # Node Version Manager
 nvm_path () {
 	export NVM_DIR="$HOME/.nvm";
@@ -64,6 +69,9 @@ fi
 
 ##### ALIASES #####
 alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'" # hide rm functionality to decrease bad habits
+# alias ls='ls -GFh'
+alias ls=lsd # https://github.com/Peltoche/lsd
+alias cat=bat # https://github.com/sharkdp/bat
 
 ##### PROMPT #####
 export PROMPT_COMMAND="history -a; history -n" # share history between tabs by updating history on prompt load
@@ -74,7 +82,6 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 # bash prompt change to colorized
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad # default
-alias ls='ls -GFh'
 
 ##### MISC #####
 set -o vi # set vi editing mode
