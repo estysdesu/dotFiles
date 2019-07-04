@@ -21,8 +21,8 @@ ln -sf $HOME/dotFiles/lepton/* $HOME/
 ln -sf $HOME/dotFiles/neofetch/* $HOME/.config/neofetch/
 # Tmux
 ln -sf $HOME/dotFiles/tmux/* $HOME/
-# Vim
-ln -sf -- $HOME/dotFiles/vim/!(myPlugins) $HOME/ # link everything but the plugins directory -- requires shopt -s extglob
-ln -sfn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins # manually link the .vim/myPlugins directory
+# Vim -- manual since contents are going multiple directories
+ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
+ln -sfn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 # VS Code
 ln -sf $HOME/dotFiles/vscode/* "$HOME/Library/Application Support/Code/User/"
