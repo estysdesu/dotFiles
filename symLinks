@@ -10,7 +10,7 @@ ln -sfFn $HOME/dotFiles/bin $HOME/bin
 # Homebrew
 ln -sf $HOME/dotFiles/homebrew/Brewfile $HOME/
 # Git
-ln -sf $HOME/dotFiles/git/.gitignore $HOME/
+ln -sf $HOME/dotFiles/git/.gitignore_global $HOME/
 # GMSH
 ln -sf $HOME/dotFiles/gmsh/{.gmshrc,.gmsh-options} $HOME/
 # iTerm2
