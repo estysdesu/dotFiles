@@ -26,6 +26,7 @@
     "workbench.fontAliasing": "auto",
     "workbench.editor.swipeToNavigate": false, // may want to change
     "workbench.editor.closeOnFileDelete": true, // dirty files never close
+    "workbench.statusBar.visible": true,
 
     // Window
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
@@ -58,6 +59,7 @@
     "explorer.openEditors.visible": 4,
     "explorer.confirmDragAndDrop": false,
     "explorer.sortOrder": "type",
+    "workbench.tree.renderIndentGuides": "onHover",
 
     // Search
     "search.smartCase": true,
