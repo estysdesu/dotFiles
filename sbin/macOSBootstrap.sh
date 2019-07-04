@@ -43,6 +43,9 @@ brew cleanup
 ##### macOS System Settings #####
 echo "Configuring macOS system settings..."
 
+# Dark theme
+defaults write 'Apple Global Domain' AppleInterfaceStyle -string 'Dark'
+
 # Require password as soon as screensaver or sleep mode starts
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
