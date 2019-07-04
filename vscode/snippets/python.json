@@ -1,0 +1,18 @@
+{
+    // origin: https://github.com/cstrap/python-snippets (modified)
+    "from ... import ...": {
+        "prefix": "fim",
+        "body": "from ${1:package/module} import ${2:names}$0",
+        "description" : "Import statement that allows individual objects from the module to be imported directly into the caller’s symbol table."
+    },
+    "new class": {
+        "prefix": "cls",
+        "body": "class ${1:ClassName}(${2:object}):\n\t\"\"\"${3:docstring for $1.}\"\"\"\n\tdef __init__(self, ${4:arg}):\n\t\t${5:super($1, self).__init__()}\n\t\tself.arg = arg\n\t\t$0",
+        "description" : "Code snippet for a class definition."
+    },
+    "list comprehension": {
+        "prefix": "lc",
+        "body": "[${1:value} for ${2:value} in ${3:iterable}]$0",
+        "description" : "List comprehension for creating a list based on existing lists."
+    },
+}

@@ -99,4 +99,14 @@
 
     // Breadcrumbs
     "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0,
+
+    // Vim
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true
 }
