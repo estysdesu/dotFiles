@@ -1,12 +1,7 @@
 dotfiles=${HOME}/dotFiles
 brewfile=$(dotfiles)/homebrew/Brewfile
 
-.PHONY:
-	brew-update
-	brew-install
-	git-update
-	sym-refresh
-	update
+.PHONY: brew-update brew-install git-update sym-refresh update
 
 brew-update:
 	@echo "updating Brewfile with all current Homebrew packages"
@@ -24,7 +19,4 @@ sym-refresh:
 	@echo "refreshing all symlinks"
 	@sh $(dotfiles)/symLinks
 
-update:
-	brew-update
-	git-update
-	sym-refresh
+update: brew-update git-update sym-refresh

@@ -70,7 +70,7 @@ fi
 ##### ALIASES #####
 alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'" # hide rm functionality to decrease bad habits
 # alias ls='ls -GFh'
-alias ls=lsd # https://github.com/Peltoche/lsd
+alias ls='lsd -FAh' # https://github.com/Peltoche/lsd
 alias cat=bat # https://github.com/sharkdp/bat
 
 ##### PROMPT #####
