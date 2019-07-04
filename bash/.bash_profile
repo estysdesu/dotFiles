@@ -3,7 +3,7 @@ if [ -f $HOME/.bashrc ]; then
         source $HOME/.bashrc
 fi
 
-##### FUNCTIONS ##### 
+##### FUNCTIONS #####
 # reload bash profile
 re_bash () {
 	source $HOME/.bash_profile
@@ -18,8 +18,8 @@ nvm_path () {
 
 # Ruby Version Manager
 rvm_path () {
-	[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"; 
-	export PATH="$PATH:$HOME/.rvm/bin"; 
+	[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm";
+	export PATH="$PATH:$HOME/.rvm/bin";
 }
 
 # function for changing the PATH variable more efficiently
@@ -86,6 +86,7 @@ export LSCOLORS=exfxcxdxbxegedabagacad # default
 ##### MISC #####
 set -o vi # set vi editing mode
 shopt -s checkwinsize # check & update window size after each command
+shopt -s extglob # extended pattern matching features
 export HOMEBREW_AUTO_UPDATE_SECS="604800" # homebrew only only update only once a week
 export DOTFILES="$HOME/dotFiles"
 

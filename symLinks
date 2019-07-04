@@ -1,17 +1,28 @@
 #!/usr/bin/env bash
 
-# set symlinks for dotFiles
-ln -sf $HOME/dotFiles/.alacritty.yml $HOME/.alacritty.yml
-ln -sf $HOME/dotFiles/.bash_profile $HOME/.bash_profile
-ln -sf $HOME/dotFiles/.bashrc $HOME/.bashrc
+##### set symlinks for dotFiles #####
+# Alacritty
+ln -sf $HOME/dotFiles/alacritty/* $HOME/
+# Bash
+ln -sf $HOME/dotFiles/* $HOME/
+# Bin [user]
 ln -sfn $HOME/dotFiles/bin $HOME/bin
-ln -sf $HOME/dotFiles/.brewfile $HOME/.brewfile
-ln -sf $HOME/dotFiles/.gitignore $HOME/.gitignore
-ln -sf $HOME/dotFiles/.gmshrc $HOME/.gmshrc
-ln -sf $HOME/dotFiles/.gmsh-options $HOME/.gmsh-options
-ln -sf $HOME/dotFiles/.leptonrc $HOME/.leptonrc
-ln -sf $HOME/dotFiles/.neofetch.conf $HOME/.config/neofetch/config.conf
-ln -sf $HOME/dotFiles/.tmux.conf $HOME/.tmux.conf
-ln -sf $HOME/dotFiles/.vimrc $HOME/.vimrc
-ln -sfn $HOME/dotFiles/.vim/myPlugins $HOME/.vim/myPlugins
+# Homebrew
+ln -sf $HOME/dotFiles/homebrew/* $HOME/
+# Git
+ln -sf $HOME/dotFiles/git/* $HOME/
+# GMSH
+ln -sf $HOME/dotFiles/gmsh/* $HOME/
+# iTerm2
+# ln -sf $HOME/dotFiles/iterm/* #<path/to/iterm/conf>
+# Lepton
+ln -sf $HOME/dotFiles/lepton/* $HOME/
+# Neofetch
+ln -sf $HOME/dotFiles/neofetch/* $HOME/.config/neofetch/
+# Tmux
+ln -sf $HOME/dotFiles/tmux/* $HOME/
+# Vim
+ln -sf $HOME/dotFiles/vim/!(myPlugins) $HOME/ # link everything but the plugins directory -- requires shopt -s extglob
+ln -sfn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins # manually link the .vim/myPlugins directory
+# VS Code
 ln -sf $HOME/dotFiles/vscode/* "$HOME/Library/Application Support/Code/User/"
