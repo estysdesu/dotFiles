@@ -25,4 +25,4 @@ ln -sf $HOME/dotFiles/tmux/* $HOME/
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
 ln -sfn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 # VS Code
-ln -sf $HOME/dotFiles/vscode/* "$HOME/Library/Application Support/Code/User/"
+ln -sf $HOME/dotFiles/vscode/* "$HOME/Library/Application Support/Code/User"
