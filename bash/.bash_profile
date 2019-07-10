@@ -5,7 +5,7 @@ fi
 
 ##### FUNCTIONS #####
 # reload bash profile
-re_bash () {
+rebash () {
 	source $HOME/.bash_profile
 }
 
@@ -24,7 +24,7 @@ rvm_path () {
 
 # Spotify web client without all the junk
 spotify_web () {
-	chrome_app=`locate  "*Google\ Chrome"`
+	chrome_app=`locate "*Google\ Chrome"`
 	"$chrome_app" --app="https://play.spotify.com"
 }
 
