@@ -53,6 +53,10 @@ brew install cask
 brew install mas
 brew install bundle
 
+# Sign-in to Apple Store (depped)
+# mas signin --dialog tylerscottestes@gmail.com
+read -p 'Please open the Apple Store and sign-in manually, \nthen return here and press [Enter] key to continue...' 
+
 # Install Brewfile packages
 echo "Installing packages..."
 brew bundle --file="../homebrew/Brewfile"
