@@ -68,6 +68,9 @@
 
     // Debug
     "debug.openExplorerOnEnd": true,
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.enableAllHovers": true,
+    "debug.inlineValues": true,
     "debug.toolBarLocation": "docked",
     "launch": {
         "configurations": [
@@ -83,6 +86,16 @@
                 "type": "python",
                 "request": "launch",
                 "program": "${file}",
+                "console": "integratedTerminal"
+            },
+            {
+                "name": "Python: Main.py (verbose)",
+                "type": "python",
+                "request": "launch",
+                "program": "${workspaceFolder}/main.py",
+                "args": [
+                    "-v"
+                ],
                 "console": "integratedTerminal"
             }
         ],
