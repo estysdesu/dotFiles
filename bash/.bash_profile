@@ -22,6 +22,13 @@ rvm_path () {
 	export PATH="$PATH:$HOME/.rvm/bin";
 }
 
+# Spotify web client without all the junk
+spotify_web () {
+	chrome_app=`locate  "*Google\ Chrome"`
+	"$chrome_app" --app="https://play.spotify.com"
+}
+
+
 # function for changing the PATH variable more efficiently
 path_munge () {
 	if ! echo "$PATH" | grep -Eq "(^|:)$1($|:)"; then
