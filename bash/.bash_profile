@@ -52,6 +52,9 @@ if [ -n "$TMUX" ]; then
 	fi
 fi
 
+# Brew coreutils (--with-default-names is depped)
+path_munge "/usr/local/opt/coreutils/libexec/gnubin" before
+
 # Custom scripts
 if [ -d "$HOME/bin" ] ; then
     path_munge "$HOME/bin" before
