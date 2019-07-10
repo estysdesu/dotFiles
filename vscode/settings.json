@@ -3,6 +3,7 @@
     "editor.minimap.enabled": true,
     "editor.minimap.maxColumn": 80,
     "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
     "editor.trimAutoWhitespace": true,
     "editor.smoothScrolling": true,
     "editor.mouseWheelScrollSensitivity": 2,
@@ -14,9 +15,6 @@
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.acceptSuggestionOnEnter": "off", // urks me with `import numpy as np`
     "editor.acceptSuggestionOnCommitCharacter": false,
-
-    // Workbench
-    "workbench.colorTheme": "Default Dark+",
     "workbench.iconTheme": "file-icons",
     "workbench.startupEditor": "none", // "readme"
     "workbench.sideBar.location": "left", // "right"
@@ -33,6 +31,7 @@
     "window.restoreWindows": "none",
     "window.newWindowDimensions": "maximized",
     "window.clickThroughInactive": false,
+    "window.zoomLevel": 0,
 
     // Files
     "files.autoSave": "afterDelay",
@@ -68,9 +67,6 @@
 
     // Debug
     "debug.openExplorerOnEnd": true,
-    "debug.allowBreakpointsEverywhere": true,
-    "debug.enableAllHovers": true,
-    "debug.inlineValues": true,
     "debug.toolBarLocation": "docked",
     "launch": {
         "configurations": [
@@ -86,16 +82,6 @@
                 "type": "python",
                 "request": "launch",
                 "program": "${file}",
-                "console": "integratedTerminal"
-            },
-            {
-                "name": "Python: Main.py (verbose)",
-                "type": "python",
-                "request": "launch",
-                "program": "${workspaceFolder}/main.py",
-                "args": [
-                    "-v"
-                ],
                 "console": "integratedTerminal"
             }
         ],
@@ -114,7 +100,6 @@
 
     // Breadcrumbs
     "breadcrumbs.enabled": true,
-    "window.zoomLevel": 0,
 
     // Vim
     "vim.hlsearch": true,
@@ -124,10 +109,16 @@
     "vim.easymotion": true,
     "vim.sneak": true,
     "vim.sneakUseIgnorecaseAndSmartcase": true,
-    
+    "python.dataScience.askForKernelRestart": false,
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.enableAllHovers": true,
+    "debug.inlineValues": true,
+
     // Python
+    "python.linting.enabled": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--line-length", "79"
-    ]
+    ],
+    "python.venvPath": "${workspaceFolder}/venv"
 }
