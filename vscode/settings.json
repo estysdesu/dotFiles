@@ -123,5 +123,11 @@
     "vim.smartcase": true,
     "vim.easymotion": true,
     "vim.sneak": true,
-    "vim.sneakUseIgnorecaseAndSmartcase": true
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    
+    // Python
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length", "79"
+    ]
 }
