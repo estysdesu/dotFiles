@@ -104,9 +104,7 @@ cask "telegram"
 cask "ultimaker-cura"
 cask "virtualbox"
 cask "visual-studio-code"
-mas "AdGuard for Safari", id: 1440147259
 mas "Fusion 360", id: 868968810
-mas "Horo", id: 1437226581
 mas "Magnet", id: 441258766
 mas "MiniPlay", id: 936243210
 mas "Tomato One", id: 907364780
