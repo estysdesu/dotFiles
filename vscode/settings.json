@@ -115,10 +115,22 @@
     "debug.inlineValues": true,
 
     // Python
+    "python.venvPath": "${workspaceFolder}/venv",
     "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.ignorePatterns": [
+        ".vscode/*.py",
+        "**/site-packages/**/*.py"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs":[
+        "--ignore-missing-imports",
+        "--follow-imports=silent",
+        "--show-column-numbers"
+    ],
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
-        "--line-length", "79"
-    ],
-    "python.venvPath": "${workspaceFolder}/venv"
+        "--line-length", "100"
+    ]
 }
