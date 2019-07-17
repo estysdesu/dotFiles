@@ -4,31 +4,6 @@ if [ -f $HOME/.bashrc ]; then
 fi
 
 ##### FUNCTIONS #####
-# reload bash profile
-rebash () {
-	source $HOME/.bash_profile
-}
-
-# Node Version Manager
-nvm_path () {
-	export NVM_DIR="$HOME/.nvm";
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";
-}
-
-# Ruby Version Manager
-rvm_path () {
-	[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm";
-	export PATH="$PATH:$HOME/.rvm/bin";
-}
-
-# Spotify web client without all the junk
-spotify_web () {
-	chrome_app=`locate "*Google\ Chrome"`
-	"$chrome_app" --app="https://play.spotify.com"
-}
-
-
 # function for changing the PATH variable more efficiently
 path_munge () {
 	if ! echo "$PATH" | grep -Eq "(^|:)$1($|:)"; then
@@ -41,6 +16,27 @@ path_munge () {
            	fi
 		export PATH
         fi
+}
+
+
+# Node Version Manager
+nvm_init () {
+	export NVM_DIR="$HOME/.nvm";
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";
+}
+
+# Ruby Version Manager
+rvm_init () {
+	export RVM_DIR="$HOME/.rvm";
+	[ -s "$RVM_DIR/scripts/rvm" ] && source "$RVM_DIR/scripts/rvm";
+	export PATH="$PATH:$RVM_DIR/bin";
+}
+
+# Cython
+cython_init () {
+	export CYTHON_DIR="/usr/local/opt/cython";
+	[ -s "$CYTHON_DIR" ] && export PATH="$PATH:$CYTHON_DIR/bin";
 }
 
 ##### PATH #####
@@ -78,10 +74,12 @@ if [ -f /etc/bash.command-not-found ]; then
 fi
 
 ##### ALIASES #####
+alias rebash="source $HOME/.bash_profile" # reload bash profile
 alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'" # hide rm functionality to decrease bad habits
 # alias ls='ls -GFh'
 alias ls='lsd -FAh' # https://github.com/Peltoche/lsd
 alias cat=bat # https://github.com/sharkdp/bat
+alias spotify_web="'`locate "*Google\ Chrome"`' --app="https://play.spotify.com"" # Spotify web client without all the junk
 
 ##### PROMPT #####
 export PROMPT_COMMAND="history -a; history -n" # share history between tabs by updating history on prompt load
