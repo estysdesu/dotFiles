@@ -30,7 +30,10 @@ source $HOME/.vim/myPlugins/netrwToggle.vim "<C-E> to toggle netrw
 """""PLUGINS"""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
+let g:go_fmt_autosave = 1
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
 
 call plug#end()
 
