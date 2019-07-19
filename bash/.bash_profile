@@ -64,12 +64,8 @@ alias ppPATH="echo $PATH | tr -s ':' '\n'"
 
 ##### PROMPT #####
 export PROMPT_COMMAND="history -a; history -n" # share history between tabs by updating history on prompt load
-
-# Bash prompt becomes [“username@hostname:cwd $”]
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-
-# bash prompt change to colorized
-export CLICOLOR=1
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ " # Bash prompt becomes [“username@hostname:cwd $”]
+export CLICOLOR=1 # bash prompt change to colorized
 export LSCOLORS=exfxcxdxbxegedabagacad # default
 
 ##### MISC #####
