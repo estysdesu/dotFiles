@@ -72,7 +72,7 @@ export LSCOLORS=exfxcxdxbxegedabagacad # default
 set -o vi # set vi editing mode
 shopt -s checkwinsize # check & update window size after each command
 shopt -s extglob # extended pattern matching features
-export HOMEBREW_AUTO_UPDATE_SECS="604800" # homebrew only only update only once a week
+export HOMEBREW_AUTO_UPDATE_SECS=604800 # homebrew only update once a week
 export DOTFILES="$HOME/dotFiles"
 
 # github.com/hkbakke/bash-insulter
