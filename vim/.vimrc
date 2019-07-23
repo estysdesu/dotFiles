@@ -1,39 +1,43 @@
 """""FILETYPE"""""
-filetype plugin indent on "detection, indentation, plugins for filetypes
+filetype plugin indent on " detection, indentation, plugins for filetypes
 
-"""""MISC"""""
+""""" MISC """""
 color pablo
 syntax enable
 set encoding=utf-8
 set wrap
 set number
-"set relativenumber
+" set relativenumber
 set backspace=indent,eol,start
-"set mouse=nicr
+" set mouse=nicr
 set mouse=a "only allows for mouse scrolling
 set nobackup "no backup files -- for windows those are *~ files
 
-"""""F&R"""""
+""""" FIND & REPLACE """""
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+autocmd! InsertEnter call noh " maybe `call :noh`
 
-"""""NETRW"""""
+""""" NETRW """""
 let g:netrw_banner=0
 let g:netrw_liststyle=3
-let g:netrw_browse_split=2 "open in vertical split
+let g:netrw_browse_split=2 " open in vertical split
 let g:netrw_altv=1
-let g:netrw_winsize=25 "window size of 25 cols
+let g:netrw_winsize=20 "window size of 25 cols
 source $HOME/.vim/myPlugins/netrwToggle.vim "<C-E> to toggle netrw
 
-"""""PLUGINS"""""
+""""" PLUGINS """""
 call plug#begin('~/.vim/plugged')
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
 let g:go_fmt_autosave = 1
 Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
+Plug 'python/black'
+autocmd BufWritePre *.py execute ':Black'
+Plug 'integralist/vim-mypy'
 
 call plug#end()
 
