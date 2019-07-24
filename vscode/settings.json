@@ -129,8 +129,5 @@
         "--follow-imports=silent",
         "--show-column-numbers"
     ],
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "--line-length", "100"
-    ]
+    "python.formatting.provider": "black"
 }
