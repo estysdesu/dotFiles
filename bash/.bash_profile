@@ -58,11 +58,13 @@ alias ppPATH="echo $PATH | tr -s ':' '\n'"
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ " # Bash prompt becomes (username@hostname:cwd$ )
 export CLICOLOR=1 # bash prompt change to colorized
 export LSCOLORS=exfxcxdxbxegedabagacad # default
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 ##### MISC #####
 set -o vi # set vi editing mode
 export HOMEBREW_AUTO_UPDATE_SECS=604800 # homebrew only update once a week
 export DOTFILES="$HOME/dotFiles"
+shopt -s histappend
 
 # github.com/hkbakke/bash-insulter
 if [ -f /etc/bash.command-not-found ]; then
