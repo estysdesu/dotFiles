@@ -10,7 +10,7 @@
     "editor.selectionHighlight": false,
     "editor.mouseWheelZoom": true, // ctrl+scroll
     "editor.formatOnSave": true, // runs black, gofmt, etc. on save
-    "editor.formatOnPaste": true,
+    "editor.formatOnPaste": false,
     "editor.autoClosingQuotes": "beforeWhitespace",
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.acceptSuggestionOnEnter": "off", // urks me with `import numpy as np`
@@ -25,14 +25,12 @@
     "workbench.editor.swipeToNavigate": false, // may want to change
     "workbench.editor.closeOnFileDelete": true, // dirty files never close
     "workbench.statusBar.visible": true,
-
     // Window
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
     "window.restoreWindows": "none",
     "window.newWindowDimensions": "maximized",
     "window.clickThroughInactive": false,
     "window.zoomLevel": 0,
-
     // Files
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 300000,
@@ -51,7 +49,6 @@
         "**/venv/**": true,
         "**/__pycache__/**": true
     },
-
     // File Explorer
     "explorer.autoReveal": true, // may want to change
     "explorer.confirmDelete": false,
@@ -59,12 +56,10 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.sortOrder": "type",
     "workbench.tree.renderIndentGuides": "onHover",
-
     // Search
     "search.smartCase": true,
     "search.useGlobalIgnoreFiles": false,
     "search.useIgnoreFiles": false,
-
     // Debug
     "debug.openExplorerOnEnd": true,
     "debug.toolBarLocation": "docked",
@@ -104,20 +99,16 @@
         ],
         "compounds": []
     },
-
     // Extensions
     "extensions.closeExtensionDetailsOnViewChange": false,
-
     // Terminal
     "terminal.explorerKind": "external",
     "terminal.external.osxExec": "Alacritty.app",
     "terminal.external.windowsExec": "C:\\Program Files\\Alacritty\\alacritty.exe",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
-
     // Breadcrumbs
     "breadcrumbs.enabled": true,
-
     // Vim
     "vim.hlsearch": true,
     "vim.incsearch": true,
@@ -130,7 +121,6 @@
     "debug.allowBreakpointsEverywhere": true,
     "debug.enableAllHovers": true,
     "debug.inlineValues": true,
-
     // Python
     "python.venvPath": "${workspaceFolder}/venv",
     "python.linting.enabled": true,
@@ -141,10 +131,12 @@
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.mypyEnabled": true,
-    "python.linting.mypyArgs":[
+    "python.linting.mypyArgs": [
         "--ignore-missing-imports",
         "--follow-imports=silent",
         "--show-column-numbers"
     ],
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    // markdown-pdf
+    "markdown-pdf.convertOnSave": true
 }

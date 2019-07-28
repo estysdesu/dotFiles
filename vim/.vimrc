@@ -18,7 +18,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-autocmd! InsertEnter call noh " maybe `call :noh`
 
 """"" NETRW """""
 let g:netrw_banner=0
