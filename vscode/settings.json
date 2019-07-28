@@ -102,9 +102,6 @@
     // Extensions
     "extensions.closeExtensionDetailsOnViewChange": false,
     // Terminal
-    "terminal.explorerKind": "external",
-    "terminal.external.osxExec": "Alacritty.app",
-    "terminal.external.windowsExec": "C:\\Program Files\\Alacritty\\alacritty.exe",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
     // Breadcrumbs
@@ -138,5 +135,10 @@
     ],
     "python.formatting.provider": "black",
     // markdown-pdf
-    "markdown-pdf.convertOnSave": true
+    "markdown-pdf.convertOnSave": true,
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.highlight": true,
+    "markdown-pdf.styles": [
+        "${env:HOME}/Library/Application Support/Code/User/githubMarkdown.css"
+    ]
 }
