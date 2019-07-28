@@ -18,8 +18,8 @@
     "workbench.iconTheme": "file-icons",
     "workbench.startupEditor": "none", // "readme"
     "workbench.sideBar.location": "left", // "right"
-    "workbench.settings.openDefaultKeybindings": true,
-    "workbench.settings.openDefaultSettings": true,
+    "workbench.settings.openDefaultKeybindings": false,
+    "workbench.settings.openDefaultSettings": false,
     "workbench.settings.editor": "json",
     "workbench.fontAliasing": "auto",
     "workbench.editor.swipeToNavigate": false, // may want to change
@@ -139,6 +139,6 @@
     "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.highlight": true,
     "markdown-pdf.styles": [
-        "${env:HOME}/Library/Application Support/Code/User/githubMarkdown.css"
+        "/Users/estysdesu/dotFiles/vscode/githubMarkdown.css"
     ]
 }
