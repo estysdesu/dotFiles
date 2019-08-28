@@ -27,3 +27,4 @@ ln -sfFn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins
 # VS Code
 ln -sf $HOME/dotFiles/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code/User/"
 ln -sfFn $HOME/dotFiles/vscode/snippets "$HOME/Library/Application Support/Code/User/snippets"
+sh $HOME/dotFiles/vscode/sharedConfig.sh

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#/usr/bin/env bash
 
 # Bootstrap script for setting up a new OSX machine
 # This should be idempotent so it can be run multiple times.
@@ -13,19 +13,23 @@
 #   - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 #   - https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
+computerName="TSE-MBP17-macOS"
+dotFilesGitURL='https://github.com/estysdesu/dotFiles.git'
+dotFilesLocalURL="$HOME/dotFiles"
+
 # Ask for the administrator password upfront
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done &> /dev/null
 
 echo "Starting bootstrapping"
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "TSE-MBP17-macOS"
-sudo scutil --set HostName "TSE-MBP17-macOS"
-sudo scutil --set LocalHostName "TSE-MBP17-macOS"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "TSE-MBP17-macOS"
+sudo scutil --set ComputerName "$computerName"
+sudo scutil --set HostName "$computerName"
+sudo scutil --set LocalHostName "$computerName"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$computerName"
 
 # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -40,26 +44,23 @@ fi
 # Update homebrew recipes
 brew update
 
-# Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
-brew install gnu-sed
-brew install gnu-tar 
-brew install gnu-indent 
-brew install gnu-which 
-brew install gnu-grep 
+# Use git to pull dotFiles repo
+echo "Installing dotFiles for setup... ($dotFilesGitURL)"
+brew install git
+[ -e $dotFilesLocalURL ] | git clone "$dotFilesGitURL" "$dotFilesLocalURL"
 
 # Install tools for brew bundle
+brew bundle  # calling bundle installs bundle, can't be installed with traditional `brew install`
 brew install cask
 brew install mas
-brew install bundle
 
 # Sign-in to Apple Store (depped)
 # mas signin --dialog tylerscottestes@gmail.com
-read -p 'Please open the Apple Store and sign-in manually, \nthen return here and press [Enter] key to continue...' 
+read -p "Please open the Apple Store and sign-in manually, \nthen return here and press [Enter] key to continue..."
 
 # Install Brewfile packages
 echo "Installing packages..."
-brew bundle --file="../homebrew/Brewfile"
+brew bundle --file="$dotFilesLocalURL/homebrew/Brewfile"
 
 # Cleanup
 echo "Cleaning up..."
@@ -81,7 +82,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool false
 defaults write 'Apple Global Domain' AppleInterfaceStyle -string 'Dark'
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -134,16 +135,13 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/"
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
-
-# Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
