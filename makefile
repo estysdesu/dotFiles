@@ -17,6 +17,6 @@ git-update:
 
 sym-refresh:
 	@echo "refreshing all symlinks"
-	@sh $(dotfiles)/symLinks
+	@sh $(dotfiles)/symLinks.sh
 
 update: brew-update git-update sym-refresh
