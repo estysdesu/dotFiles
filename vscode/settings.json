@@ -140,5 +140,7 @@
     "markdown-pdf.highlight": true,
     "markdown-pdf.styles": [
         "/Users/estysdesu/dotFiles/vscode/githubMarkdown.css"
-    ]
+    ],
+    // matlab
+    "matlab.mlintpath": "/Applications/MATLAB_R2016a.app/bin/maci64/mlint"
 }
