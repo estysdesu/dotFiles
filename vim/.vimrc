@@ -39,6 +39,7 @@ autocmd BufWritePre *.py execute ':Black'
 Plug 'integralist/vim-mypy'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+let g:limelight_conceal_guifg = 'DarkGray'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
