@@ -39,10 +39,6 @@ body {
   margin: 0.67em 0;
 }
 
-.markdown-body img {
-  border: 0;
-}
-
 .markdown-body hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -412,9 +408,21 @@ body {
 }
 
 .markdown-body img {
-  max-width: 100%;
+  border: 0;
+  max-width: 80%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  align: "middle";
+}
+
+body img {
+  border: 0;
+  display: block;
+  max-width: 80%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .markdown-body code {

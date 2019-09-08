@@ -135,7 +135,7 @@
     ],
     "python.formatting.provider": "black",
     // markdown-pdf
-    "markdown-pdf.convertOnSave": true,
+    "markdown-pdf.convertOnSave": false,
     "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.highlight": true,
     "markdown-pdf.styles": [

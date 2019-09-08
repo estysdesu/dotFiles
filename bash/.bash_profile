@@ -51,8 +51,9 @@ alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin
 alias grep='grep --color' # colorize grep match
 alias ls='lsd -FAh' # https://github.com/Peltoche/lsd
 alias cat='bat' # https://github.com/sharkdp/bat
-alias spotify_web="'`locate "*Google\ Chrome"`' --app="https://play.spotify.com"" # Spotify web client without all the junk
+alias spotifyWeb="'`locate "*Google\ Chrome"`' --app="https://play.spotify.com"" # Spotify web client without all the junk
 alias ppPATH="echo $PATH | tr -s ':' '\n'"
+alias cincyWttr="curl https://wttr.in/Cincinnati"
 
 ##### PROMPT #####
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ " # Bash prompt becomes (username@hostname:cwd$ )

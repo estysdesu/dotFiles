@@ -37,6 +37,10 @@ let g:rustfmt_autosave = 1
 Plug 'python/black'
 autocmd BufWritePre *.py execute ':Black'
 Plug 'integralist/vim-mypy'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 call plug#end()
 
