@@ -5,7 +5,7 @@ filetype plugin indent on " detection, indentation, plugins for filetypes
 color pablo
 syntax enable
 set encoding=utf-8
-set wrap
+set wrap linebreak
 set number
 " set relativenumber
 set backspace=indent,eol,start

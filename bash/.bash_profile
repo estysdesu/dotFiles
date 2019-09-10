@@ -44,7 +44,7 @@ export GOROOT="$brew_opt/go/libexec"
 path_munge "${GOROOT}/bin" after
 path_munge "${GOPATH}/bin" after
 
-##### ALIASES #####
+##### ALIASES & GLOBALS #####
 alias rebash="source $HOME/.bash_profile" # reload bash profile
 alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'" # hide rm functionality to decrease bad habits
 # alias ls='ls -GFh'
@@ -54,6 +54,7 @@ alias cat='bat' # https://github.com/sharkdp/bat
 alias spotifyWeb="'`locate "*Google\ Chrome"`' --app="https://play.spotify.com"" # Spotify web client without all the junk
 alias ppPATH="echo $PATH | tr -s ':' '\n'"
 alias cincyWttr="curl https://wttr.in/Cincinnati"
+export OneDrive="$HOME/OneDrive - University of Cincinnati"
 
 ##### PROMPT #####
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ " # Bash prompt becomes (username@hostname:cwd$ )
