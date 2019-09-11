@@ -3,6 +3,8 @@ brewfile=$(dotfiles)/homebrew/Brewfile
 
 .PHONY: brew-update brew-install git-update sym-refresh update
 
+update: brew-update git-update sym-refresh
+
 brew-update:
 	@echo "updating Brewfile with all current Homebrew packages"
 	@brew bundle dump --file=$(brewfile) --force
@@ -19,4 +21,3 @@ sym-refresh:
 	@echo "refreshing all symlinks"
 	@sh $(dotfiles)/symLinks.sh &> /dev/null
 
-update: brew-update git-update sym-refresh
