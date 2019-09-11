@@ -28,3 +28,5 @@ ln -sfFn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins
 ln -sf $HOME/dotFiles/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code/User/"
 ln -sfFn $HOME/dotFiles/vscode/snippets "$HOME/Library/Application Support/Code/User/snippets"
 # sh $HOME/dotFiles/vscode/sharedConfig.sh
+# Ranger
+ln -sf $HOME/dotFiles/ranger/rc.conf $HOME/.config/ranger/
