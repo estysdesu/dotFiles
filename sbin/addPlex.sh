@@ -1,7 +1,9 @@
-# Plex Media Server install and setup
+#!/usr/bin/env bash
+
+##### Plex Media Server Install and Setup
 # 	Requires/Installs: curl, apt-transport-https, plexmediaserver
 #	If ufw is enabled, it opens firewall access for SSH and plexmediaserver (standard + dlna)
-
+##### 
 
 # Ask for sudo permissions upfront
 echo 'Please give sudo permissions'
@@ -17,8 +19,8 @@ fi
 # Install apt-trasnport-https
 apt install apt-transport-https &> /dev/null
 
+echo 'Installing Plex...'
 # Add Plex PGP Signature key
-echo 'Installing plex...'
 curl https://downloads.plex.tv/plex-keys/PlexSign.key | apt-key add - &> /dev/null
 # Add the Plex repository
 echo deb https://downloads.plex.tv/repo/deb public main | tee /etc/apt/sources.list.d/plexmediaserver.list &> /dev/null
