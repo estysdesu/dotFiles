@@ -7,14 +7,10 @@ ln -sf $HOME/dotFiles/alacritty/.alacritty.yml $HOME/
 ln -sf $HOME/dotFiles/bash/{.bash_profile,.bashrc,.profile} $HOME/
 # Bin [user]
 ln -sfFn $HOME/dotFiles/bin $HOME/bin
-# Homebrew
-ln -sf $HOME/dotFiles/homebrew/Brewfile $HOME/
 # Git
 ln -sf $HOME/dotFiles/git/.gitignore_global $HOME/
 # GMSH
 ln -sf $HOME/dotFiles/gmsh/{.gmshrc,.gmsh-options} $HOME/
-# iTerm2
-# ln -sf $HOME/dotFiles/iterm/estysdesu.itermcolors #<path/to/iterm/conf>
 # Lepton
 ln -sf $HOME/dotFiles/lepton/.leptonrc $HOME/
 # Neofetch
@@ -25,6 +21,6 @@ ln -sf $HOME/dotFiles/tmux/.tmux.conf $HOME/
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
 ln -sfFn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 # VS Code
-ln -sf $HOME/dotFiles/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code/User/"
-ln -sfFn $HOME/dotFiles/vscode/snippets "$HOME/Library/Application Support/Code/User/snippets"
+# ln -sf $HOME/dotFiles/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code/User/"
+# ln -sfFn $HOME/dotFiles/vscode/snippets "$HOME/Library/Application Support/Code/User/snippets"
 # sh $HOME/dotFiles/vscode/sharedConfig.sh
