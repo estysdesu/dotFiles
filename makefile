@@ -6,18 +6,18 @@ brewfile=$(dotfiles)/homebrew/Brewfile
 update: brew-update git-update sym-refresh
 
 brew-update:
-	@echo "updating Brewfile with all current Homebrew packages"
+	@echo "Updating Brewfile with all current Homebrew packages..."
 	@brew bundle dump --file=$(brewfile) --force
 
 brew-install:
-	@echo "installing Homebrew packages in Brewfile"
+	@echo "Installing Homebrew packages in Brewfile..."
 	@brew bundle --file=$(brewfile)
 
 git-update:
-	@echo "updating dotFiles github repository"
+	@echo "Updating dotFiles github repository..."
 	@-(git add . && git commit -m "update dotfiles from make" && git push) > /dev/null 2>&1
 
 sym-refresh:
-	@echo "refreshing all symlinks"
+	@echo "Refreshing all symlinks..."
 	@sh $(dotfiles)/symLinks.sh &> /dev/null
 
