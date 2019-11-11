@@ -6,7 +6,7 @@ ln -sf $HOME/dotFiles/alacritty/.alacritty.yml $HOME/
 # Bash
 ln -sf $HOME/dotFiles/bash/{.bash_profile,.bashrc,.profile} $HOME/
 # Bin [user]
-ln -sfFn $HOME/dotFiles/bin $HOME/bin
+ln -sfn $HOME/dotFiles/bin $HOME/bin
 # Git
 ln -sf $HOME/dotFiles/git/.gitignore_global $HOME/
 # GMSH
@@ -15,12 +15,14 @@ ln -sf $HOME/dotFiles/gmsh/{.gmshrc,.gmsh-options} $HOME/
 ln -sf $HOME/dotFiles/lepton/.leptonrc $HOME/
 # Neofetch
 ln -sf $HOME/dotFiles/neofetch/config.conf $HOME/.config/neofetch/
+# Prusa Slicer
+ln -sfn $HOME/dotfiles/prusaSlicer/{printer,'print',filament} "$HOME/Library/Application Support/PrusaSlicer/"
 # Tmux
 ln -sf $HOME/dotFiles/tmux/.tmux.conf $HOME/
 # Vim -- manual since contents are going multiple directories
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
-ln -sfFn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
+ln -sfn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 # VS Code
 # ln -sf $HOME/dotFiles/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code/User/"
-# ln -sfFn $HOME/dotFiles/vscode/snippets "$HOME/Library/Application Support/Code/User/snippets"
+# ln -sfn $HOME/dotFiles/vscode/snippets "$HOME/Library/Application Support/Code/User/snippets"
 # sh $HOME/dotFiles/vscode/sharedConfig.sh

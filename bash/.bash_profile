@@ -34,27 +34,28 @@ fi
 
 brew_opt="`brew --prefix`/opt"
 path_munge "$brew_opt/coreutils/libexec/gnubin" before # brew coreutils
+path_munge "$brew_opt/llvm/bin" before # brew llvm
 path_munge "$brew_opt/ruby/bin" before # brew Ruby
 path_munge "$brew_opt/sqlite/bin" before # brew SQLite
-# path_munge "brew_opt/cython/bin" after # brew Cython
 path_munge "$HOME/.cargo/bin" after # Rust & Cargo
 # brew Golang
-export GOPATH="${HOME}/projects/golang"
+export GOPATH="${HOME}/.golang"
 export GOROOT="$brew_opt/go/libexec"
 path_munge "${GOROOT}/bin" after
 path_munge "${GOPATH}/bin" after
 
 ##### ALIASES & GLOBALS #####
 alias rebash="source $HOME/.bash_profile" # reload bash profile
-alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'" # hide rm functionality to decrease bad habits
+alias rm="echo Use 'trash' unless 'rm' is needed. If so, use the full path '/bin/rm' or '\rm'" # hide rm functionality to decrease bad habits; use trash-cli instead
 # alias ls='ls -GFh'
 alias grep='grep --color' # colorize grep match
 alias ls='lsd -FAh' # https://github.com/Peltoche/lsd
 alias cat='bat' # https://github.com/sharkdp/bat
-alias spotifyWeb="'`locate "*Google\ Chrome"`' --app="https://play.spotify.com"" # Spotify web client without all the junk
+# alias spotifyWeb="'`locate "*Google\ Chrome"`' --app="https://play.spotify.com"" # Spotify web client without all the junk
 alias ppPATH="echo $PATH | tr -s ':' '\n'"
 alias cincyWttr="curl https://wttr.in/Cincinnati"
 export OneDrive="$HOME/OneDrive - University of Cincinnati"
+alias matlab='/Applications/MATLAB_R2016a.app/bin/matlab -nodesktop -nosplash'
 
 ##### PROMPT #####
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ " # Bash prompt becomes (username@hostname:cwd$ )
