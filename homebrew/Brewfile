@@ -1,8 +1,4 @@
 tap "cjbassi/gotop"
-<<<<<<< HEAD
-tap "dart-lang/dart"
-=======
->>>>>>> 0947b7a... update dotfiles from make
 tap "domt4/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -12,13 +8,9 @@ tap "homebrew/services"
 tap "jesseduffield/lazydocker"
 tap "osx-cross/avr"
 tap "tinygo-org/tools"
-<<<<<<< HEAD
-brew "ack"
-=======
 cask "xquartz"
 brew "ack"
 brew "openssl@1.1"
->>>>>>> 0947b7a... update dotfiles from make
 brew "ascii"
 brew "readline"
 brew "sqlite"
@@ -30,19 +22,10 @@ brew "automake"
 brew "avrdude"
 brew "bash"
 brew "bat"
-<<<<<<< HEAD
-=======
-brew "node"
-brew "bitwarden-cli"
->>>>>>> 0947b7a... update dotfiles from make
 brew "emacs"
 brew "cask"
 brew "coreutils"
 brew "cowsay"
-<<<<<<< HEAD
-brew "cython"
-=======
->>>>>>> 0947b7a... update dotfiles from make
 brew "deno"
 brew "elinks"
 brew "entr"
@@ -77,14 +60,10 @@ brew "media-info"
 brew "micro"
 brew "nano"
 brew "neofetch"
-<<<<<<< HEAD
 brew "node"
-brew "openssl@1.1"
-=======
 brew "octave"
 brew "p7zip"
 brew "platformio"
->>>>>>> 0947b7a... update dotfiles from make
 brew "poppler"
 brew "postgresql"
 brew "pre-commit"
@@ -93,10 +72,6 @@ brew "python@2"
 brew "ranger"
 brew "ruby"
 brew "rustup-init"
-<<<<<<< HEAD
-brew "shpotify"
-=======
->>>>>>> 0947b7a... update dotfiles from make
 brew "speedtest-cli"
 brew "stress"
 brew "tmux"
@@ -108,13 +83,7 @@ brew "vim"
 brew "w3m"
 brew "wget"
 brew "youtube-dl"
-<<<<<<< HEAD
-brew "zsh"
 brew "cjbassi/gotop/gotop"
-brew "dart-lang/dart/dart"
-=======
-brew "cjbassi/gotop/gotop"
->>>>>>> 0947b7a... update dotfiles from make
 brew "jesseduffield/lazydocker/lazydocker"
 brew "osx-cross/avr/avr-gcc"
 brew "tinygo-org/tools/tinygo"
@@ -122,10 +91,6 @@ cask "alacritty"
 cask "angry-ip-scanner"
 cask "arduino"
 cask "balenaetcher"
-<<<<<<< HEAD
-=======
-cask "bitwarden"
->>>>>>> 0947b7a... update dotfiles from make
 cask "cheatsheet"
 cask "day-o"
 cask "docker"
@@ -141,33 +106,19 @@ cask "nordvpn"
 cask "obs"
 cask "onedrive"
 cask "openscad"
-<<<<<<< HEAD
-cask "plex-media-server"
-cask "postman"
-cask "qbittorrent"
-=======
 cask "plex-media-player"
 cask "postman"
 cask "prusaslicer"
 cask "qbittorrent"
 cask "repetier-host"
->>>>>>> 0947b7a... update dotfiles from make
 cask "skype"
 cask "slack"
 cask "spotify"
 cask "steam"
 cask "telegram"
-<<<<<<< HEAD
-cask "ultimaker-cura"
-cask "virtualbox"
-cask "visual-studio-code"
-mas "Magnet", id: 441258766
-mas "Xcode", id: 497799835
-=======
 cask "virtualbox"
 cask "visual-studio-code"
 mas "Install OS X El Capitan", id: 1018109117
 mas "Magnet", id: 441258766
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Super Stickman Golf 3", id: 1071253172
->>>>>>> 0947b7a... update dotfiles from make
