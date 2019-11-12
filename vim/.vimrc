@@ -30,13 +30,13 @@ source $HOME/.vim/myPlugins/netrwToggle.vim "<C-E> to toggle netrw
 """"" PLUGINS """""
 call plug#begin('~/.vim/plugged')
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
-let g:go_fmt_autosave = 1
-Plug 'rust-lang/rust.vim'
-let g:rustfmt_autosave = 1
-Plug 'python/black'
-autocmd BufWritePre *.py execute ':Black'
-Plug 'integralist/vim-mypy'
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
+"let g:go_fmt_autosave = 1
+"Plug 'rust-lang/rust.vim'
+"let g:rustfmt_autosave = 1
+"Plug 'python/black'
+"autocmd BufWritePre *.py execute ':Black'
+"Plug 'integralist/vim-mypy'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 let g:limelight_conceal_ctermfg = 'Gray'
