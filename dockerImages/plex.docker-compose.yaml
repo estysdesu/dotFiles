@@ -11,7 +11,16 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /home/estysdesu/plexData:/config
-      - /home/estysdesu/plexData/tv:/tv
-      - /home/estysdesu/plexData/movies:/movies
+      - tv_data:/tv
+      - /mnt/WDBLUE/Movies:/movies
+      - /mnt/WDBLUE/Audio:/audio
       - /home/estysdesu/plexData/transcode:/transcode
     restart: unless-stopped
+
+volumes:
+  tv_data:
+    driver: local
+    driver_opts:
+      device: "/mnt/WDBLUE/TV\ Shows"
+      o: bind
+      type: none

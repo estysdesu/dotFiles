@@ -13,7 +13,7 @@ services:
     volumes:
       - /home/estysdesu/openVPNData/config:/config
     ports:
-      - 943:943
-      - 9443:9443
+      - 943:943/tcp
+      - 9443:9443/tcp
       - 1194:1194/udp
     restart: unless-stopped
