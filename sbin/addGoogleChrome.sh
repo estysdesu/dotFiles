@@ -4,6 +4,8 @@
 # 	Requires/Installs: wget, google-chrome-stable 
 ##### 
 
+set -e
+
 # Ask for sudo permissions upfront
 echo 'Please give sudo permissions'
 sudo -v
