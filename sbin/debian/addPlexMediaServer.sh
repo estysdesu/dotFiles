@@ -13,7 +13,8 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1
 fi
 
-apt install ufw apt-transport-https curl
+apt install apt-transport-https curl
+sh ./addUFW.sh
 
 curl "https://downloads.plex.tv/plex-keys/PlexSign.key" | apt-key add - 
 echo "deb https://downloads.plex.tv/repo/deb public main" | tee /etc/apt/sources.list.d/plexmediaserver.list 

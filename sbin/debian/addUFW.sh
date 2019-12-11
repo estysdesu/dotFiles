@@ -1,10 +1,15 @@
 #!/usr/bin/env sh
 
-sudo -v
+set -e
 
-sudo apt install ufw
-sudo ufw enable
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw status verbose
-sudo ufw allow ssh
+if [ $(id -u) -ne 0 ]; then
+	echo "This script needs to be run as root." >&2
+	exit 1
+fi
+
+apt install ufw
+ufw enable
+ufw default deny incoming
+ufw default allow outgoing
+ufw status verbose
+ufw allow ssh

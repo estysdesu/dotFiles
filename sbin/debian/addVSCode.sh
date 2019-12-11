@@ -7,5 +7,7 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1
 fi
 
-wget -O /tmp/vscode.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
+wget -O /tmp/vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
 apt install /tmp/vscode.deb
+apt update
+apt upgrade code

@@ -7,6 +7,8 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1
 fi 
 
-wget -O /tmp/teamviewer_amd64.deb https://download.teamviewer.com/download/linux/teamviewer_amd64.deb 
-apt install /tmp/teamviewer_amd64.deb
 wget -O - https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc | apt-key add -
+wget -O /tmp/teamviewer.deb https://download.teamviewer.com/download/linux/teamviewer_amd64.deb 
+apt install /tmp/teamviewer.deb
+apt update
+apt upgrade teamviewer
