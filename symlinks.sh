@@ -12,7 +12,7 @@ ln -sf $HOME/dotFiles/bash/.profile $HOME/
 
 ##### Bin [user] #####
 mkdir -p $HOME/bin
-ln -sfn $HOME/dotFiles/bin $HOME/bin
+ln -sfFn $HOME/dotFiles/bin $HOME/bin
 
 ##### Git #####
 ln -sf $HOME/dotFiles/git/.gitignore_global $HOME/
@@ -34,11 +34,11 @@ ln -sf $HOME/dotFiles/tmux/.tmux.conf $HOME/
 ##### Vim -- manual since contents are going multiple directories #####
 mkdir -p $HOME/.vim/myPlugins
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
-ln -sfn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
+ln -sfFn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 
 ##### VS Code #####
 mkdir -p $HOME/.config/Code/User/snippets
 ln -sf $HOME/dotFiles/vscode/settings.json "$HOME/.config/Code/User"
 ln -sf $HOME/dotFiles/vscode/keybindings.json "$HOME/.config/Code/User"
-ln -sfn $HOME/dotFiles/vscode/snippets "$HOME/.config/Code/User/snippets"
+ln -sfFn $HOME/dotFiles/vscode/snippets "$HOME/.config/Code/User/snippets"
 #sh $HOME/dotFiles/vscode/sharedConfig.sh
