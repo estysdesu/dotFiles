@@ -11,7 +11,6 @@ ln -sf $HOME/dotFiles/bash/.bashrc $HOME/
 ln -sf $HOME/dotFiles/bash/.profile $HOME/
 
 ##### Bin [user] #####
-mkdir -p $HOME/bin
 ln -sf $HOME/dotFiles/bin $HOME/bin
 
 ##### Git #####
@@ -32,13 +31,13 @@ ln -sf $HOME/dotFiles/neofetch/config.conf $HOME/.config/neofetch/
 ln -sf $HOME/dotFiles/tmux/.tmux.conf $HOME/
 
 ##### Vim -- manual since contents are going multiple directories #####
-mkdir -p $HOME/.vim/myPlugins
+mkdir -p $HOME/.vim
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
 ln -sf $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 
 ##### VS Code #####
-mkdir -p $HOME/.config/Code/User/snippets
-ln -sf $HOME/dotFiles/vscode/settings.json "$HOME/.config/Code/User"
-ln -sf $HOME/dotFiles/vscode/keybindings.json "$HOME/.config/Code/User"
+mkdir -p $HOME/.config/Code/User
+ln -sf $HOME/dotFiles/vscode/settings.json "$HOME/.config/Code/User/"
+ln -sf $HOME/dotFiles/vscode/keybindings.json "$HOME/.config/Code/User/"
 ln -sf $HOME/dotFiles/vscode/snippets "$HOME/.config/Code/User/snippets"
 #sh $HOME/dotFiles/vscode/sharedConfig.sh
