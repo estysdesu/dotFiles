@@ -1,32 +1,42 @@
 #!/usr/bin/env bash
 
 ##### set symlinks for dotFiles #####
-# Alacritty
+
+##### Alacritty #####
 ln -sf $HOME/dotFiles/alacritty/.alacritty.yml $HOME/
+
 # Bash
 ln -sf $HOME/dotFiles/bash/.bash_profile $HOME/
 ln -sf $HOME/dotFiles/bash/.bashrc $HOME/
 ln -sf $HOME/dotFiles/bash/.profile $HOME/
-# Bin [user]
+
+##### Bin [user] #####
 mkdir -p $HOME/bin
 ln -sfFn $HOME/dotFiles/bin $HOME/bin
-# Git
+
+##### Git #####
 ln -sf $HOME/dotFiles/git/.gitignore_global $HOME/
-# GMSH
+
+##### GMSH ######
 ln -sf $HOME/dotFiles/gmsh/.gmshrc $HOME/
 ln -sf $HOME/dotFiles/gmsh/.gmsh-options $HOME/
-# Lepton
+
+##### Lepton #####
 ln -sf $HOME/dotFiles/lepton/.leptonrc $HOME/
-# Neofetch
+
+##### Neofetch #####
 mkdir -p $HOME/.config/neofetch
 ln -sf $HOME/dotFiles/neofetch/config.conf $HOME/.config/neofetch/
-# Tmux
+
+##### Tmux #####
 ln -sf $HOME/dotFiles/tmux/.tmux.conf $HOME/
-# Vim -- manual since contents are going multiple directories
+
+##### Vim -- manual since contents are going multiple directories #####
 mkdir -p $HOME/.vim/myPlugins
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
 ln -sfFn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
-# VS Code
+
+##### VS Code #####
 mkdir -p $HOME/.config/Code/User/snippets
 ln -sf $HOME/dotFiles/vscode/settings.json "$HOME/.config/Code/User"
 ln -sf $HOME/dotFiles/vscode/keybindings.json "$HOME/.config/Code/User"
