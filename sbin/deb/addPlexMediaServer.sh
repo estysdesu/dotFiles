@@ -25,6 +25,7 @@ apt install plexmediaserver
 systemctl is-active --quiet plexmediaserver
 if [ $? -ne 0 ]; then
 	systemctl start plexmediaserver
+	systemctl enable plexmediaserver
 fi
 
 # Edit firewall (UFW) if enabled
