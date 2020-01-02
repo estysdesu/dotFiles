@@ -12,7 +12,7 @@ ln -sf $HOME/dotFiles/bash/.profile $HOME/
 
 ##### Bin [user] #####
 mkdir -p $HOME/bin
-ln -sfFn $HOME/dotFiles/bin $HOME/bin
+ln -sfn $HOME/dotFiles/bin $HOME/bin
 
 ##### Git #####
 ln -sf $HOME/dotFiles/git/.gitignore_global $HOME/
