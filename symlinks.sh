@@ -34,7 +34,7 @@ ln -sf $HOME/dotFiles/tmux/.tmux.conf $HOME/
 ##### Vim -- manual since contents are going multiple directories #####
 mkdir -p $HOME/.vim/myPlugins
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
-ln -sfF $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
+ln -sfn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 
 ##### VS Code #####
 mkdir -p $HOME/.config/Code/User/snippets
