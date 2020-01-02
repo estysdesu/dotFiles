@@ -5,7 +5,7 @@
 ##### Alacritty #####
 ln -sf $HOME/dotFiles/alacritty/.alacritty.yml $HOME/
 
-# Bash
+##### Bash #####
 ln -sf $HOME/dotFiles/bash/.bash_profile $HOME/
 ln -sf $HOME/dotFiles/bash/.bashrc $HOME/
 ln -sf $HOME/dotFiles/bash/.profile $HOME/
@@ -34,7 +34,7 @@ ln -sf $HOME/dotFiles/tmux/.tmux.conf $HOME/
 ##### Vim -- manual since contents are going multiple directories #####
 mkdir -p $HOME/.vim/myPlugins
 ln -sf $HOME/dotFiles/vim/.vimrc $HOME/ 
-ln -sfFn $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
+ln -sfF $HOME/dotFiles/vim/myPlugins $HOME/.vim/myPlugins 
 
 ##### VS Code #####
 mkdir -p $HOME/.config/Code/User/snippets
