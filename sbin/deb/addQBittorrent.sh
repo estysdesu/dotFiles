@@ -32,3 +32,5 @@ TimeoutStopSec=infinity
 WantedBy=multi-user.target
 EOF'
 
+apt install ufw
+ufw allow 8080 
