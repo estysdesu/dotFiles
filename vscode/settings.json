@@ -95,7 +95,15 @@
                     // "--no-reload"
                 ],
                 "jinja": true
-            }
+            },
+            {
+                "name": "Rust (lldb)",
+                "type": "lldb",
+                "request": "launch",
+                "program": "${workspaceFolder}/target/debug/${workspaceRootFolderName}",
+                "args": [],
+                "cwd": "${workspaceFolder}",
+            },
         ],
         "compounds": []
     },
@@ -139,8 +147,12 @@
     "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.highlight": true,
     "markdown-pdf.styles": [
-        "/Users/estysdesu/dotFiles/vscode/githubMarkdown.css"
+        "/home/estysdesu/dotFiles/vscode/githubMarkdown.css"
     ],
     // matlab
-    "matlab.mlintpath": "/Applications/MATLAB_R2016a.app/bin/maci64/mlint"
+    "matlab.mlintpath": "",
+    // rust
+    "rust-client.updateOnStartup": true,
+    // go
+    "go.formatTool": "goimports",
 }
