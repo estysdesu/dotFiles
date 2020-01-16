@@ -12,7 +12,6 @@ ms-vscode-remote.remote-ssh-explorer
 ms-vscode.cpptools
 ms-vscode.Go
 ms-vsliveshare.vsliveshare
-octref.vetur
 pdconsec.vscode-print
 rust-lang.rust
 shyykoserhiy.vscode-spotify
