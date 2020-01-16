@@ -32,17 +32,21 @@ if [ -d "$HOME/bin" ] ; then
     path_munge "$HOME/bin" before
 fi
 
-brew_opt="`brew --prefix`/opt"
+path_munge "/usr/local/bin" before
+brew_pre="`brew --prefix`"
+brew_opt="$brew_pre/opt"
 path_munge "$brew_opt/coreutils/libexec/gnubin" before # brew coreutils
 path_munge "$brew_opt/llvm/bin" before # brew llvm
 path_munge "$brew_opt/ruby/bin" before # brew Ruby
 path_munge "$brew_opt/sqlite/bin" before # brew SQLite
 path_munge "$HOME/.cargo/bin" after # Rust & Cargo
-# brew Golang
+path_munge "$HOME/Library/Python/3.7/bin" after
 export GOPATH="${HOME}/.golang"
 export GOROOT="$brew_opt/go/libexec"
 path_munge "${GOROOT}/bin" after
 path_munge "${GOPATH}/bin" after
+path_munge "$brew_pre/sbin" before
+path_munge "$HOME/.npm-global/bin" after
 
 ##### ALIASES & GLOBALS #####
 alias rebash="source $HOME/.bash_profile" # reload bash profile

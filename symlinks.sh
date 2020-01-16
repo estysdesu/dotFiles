@@ -19,6 +19,8 @@ ln -sf $HOME/dotFiles/gmsh/{.gmshrc,.gmsh-options} $HOME/
 ln -sf $HOME/dotFiles/lepton/.leptonrc $HOME/
 # Neofetch
 ln -sf $HOME/dotFiles/neofetch/config.conf $HOME/.config/neofetch/
+# Node
+ln -sf $HOME/dotFiles/node/.npmrc $HOME/
 # Prusa Slicer
 ln -sfn $HOME/dotfiles/prusaSlicer/{printer,'print',filament} "$HOME/Library/Application Support/PrusaSlicer/"
 # Tmux
