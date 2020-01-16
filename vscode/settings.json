@@ -153,5 +153,6 @@
     "matlab.mlintpath": "/Applications/MATLAB_R2016a.app/bin/maci64/mlint",
     // rust
     "rust-client.updateOnStartup": true,
+    // go
     "go.formatTool": "goimports",
 }
