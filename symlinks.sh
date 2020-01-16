@@ -8,7 +8,6 @@ ln -sf $HOME/dotFiles/alacritty/.alacritty.yml $HOME/
 ##### Bash #####
 ln -sf $HOME/dotFiles/bash/.bash_profile $HOME/
 ln -sf $HOME/dotFiles/bash/.bashrc $HOME/
-ln -sf $HOME/dotFiles/bash/.profile $HOME/
 
 ##### Bin [user] #####
 ln -sf $HOME/dotFiles/bin $HOME/bin
@@ -22,6 +21,9 @@ ln -sf $HOME/dotFiles/gmsh/.gmsh-options $HOME/
 
 ##### Lepton #####
 ln -sf $HOME/dotFiles/lepton/.leptonrc $HOME/
+
+##### Node #####
+ln -sf $HOME/dotFiles/node/.npmrc $HOME/
 
 ##### Neofetch #####
 mkdir -p $HOME/.config/neofetch
