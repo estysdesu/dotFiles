@@ -8,6 +8,7 @@ esac
 
 ##### MISC #####
 set -o vi # set vi editing mode
+export EDITOR=vim
 
 HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space in the history.
 shopt -s histappend # append to the history file, don't overwrite it

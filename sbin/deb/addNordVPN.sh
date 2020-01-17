@@ -8,6 +8,7 @@ if [ $(id -u) -ne 0 ]; then
 fi 
 
 wget -O /tmp/nordvpn.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+echo "deb https://repo.nordvpn.com/deb/nordvpn/debian stable main" | tee /etc/apt/sources.list.d/nordvpn.list
 apt install /tmp/nordvpn.deb
 apt update
 apt upgrade nordvpn

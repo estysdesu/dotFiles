@@ -16,7 +16,7 @@ fi
 apt install apt-transport-https curl
 sh ./addUFW.sh
 
-curl "https://downloads.plex.tv/plex-keys/PlexSign.key" | apt-key add - 
+wget -q -O https://downloads.plex.tv/plex-keys/PlexSign.key - | apt-key add -
 echo "deb https://downloads.plex.tv/repo/deb public main" | tee /etc/apt/sources.list.d/plexmediaserver.list 
 apt update 
 apt install plexmediaserver 

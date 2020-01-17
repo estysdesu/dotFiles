@@ -7,7 +7,7 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1
 fi
 
-add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+echo "deb http://ppa.launchpad.net/qbittorrent-team/qbittorrent-stable/ubuntu eoan main" | tee /etc/apt/sources.list.d/qbittorrent.list
 apt update
 apt install qbittorrent-nox
 
