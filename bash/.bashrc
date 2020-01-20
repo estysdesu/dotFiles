@@ -58,6 +58,7 @@ if [ -f ${path_munge_file} ]; then
 	path_munge "${GOPATH}/.golang" after
 	path_munge "${GOROOT}/.golang" after
 	path_munge "${HOME}/.npm-global/bin" after
+	path_munge "${HOME}/.local/bin" after
 fi
 
 ##### PROMPT #####
