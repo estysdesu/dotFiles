@@ -53,11 +53,20 @@ path_munge_file="${dotFiles}/sbin/path_munge.sh"
 if [ -f ${path_munge_file} ]; then
 	source "${dotFiles}/sbin/path_munge.sh"
 	path_munge "${HOME}/bin" before
+
 	path_munge "${HOME}/.cargo/bin" after
+
 	export GOPATH="${HOME}/.golang" after
 	path_munge "${GOPATH}/.golang" after
 	path_munge "${GOROOT}/.golang" after
+	
 	path_munge "${HOME}/.npm-global/bin" after
+
+	path_munge"${HOME}/.poetry/bin" after
+	path_munge "${HOME}/.pyenv/bin"
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+
 	path_munge "${HOME}/.local/bin" after
 fi
 
@@ -66,6 +75,7 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1 # bash prompt change to colorized
 export LSCOLORS=exfxcxdxbxegedabagacad # default
 export PROMPT_COMMAND="history -a;${PROMPT_COMMAND}"
+
 
 # Execute MOTD
 sh $HOME/bin/motd
