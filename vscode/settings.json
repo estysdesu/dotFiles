@@ -155,4 +155,5 @@
     "rust-client.updateOnStartup": true,
     // go
     "go.formatTool": "goimports",
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
 }

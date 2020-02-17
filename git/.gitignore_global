@@ -16,6 +16,7 @@ node_modules/
 ###################
 venv/
 .pynb_checkpoints/
+.ipynb_checkpoints/
 *.pyc
 __pycache__/
 
