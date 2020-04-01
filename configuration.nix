@@ -41,7 +41,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; 
     if config.services.xserver.enable then
-      [ wget vim tmux git mkpasswd firefox ]
+      [ wget vim tmux git mkpasswd firefox teamviewer ]
     else [ wget vim tmux git mkpasswd ];
 
   ##### SERVICES #####
