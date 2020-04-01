@@ -155,5 +155,34 @@
     "rust-client.updateOnStartup": true,
     // go
     "go.formatTool": "goimports",
+    // color theme
     "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    // latex
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.synctex(busy)",
+        "*.synctex.gz(busy)",
+        "*.nav",
+        "*.gz"
+    ],
+    "latex-workshop.latex.autoClean.run": "onBuilt"
 }

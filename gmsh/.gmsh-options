@@ -7,14 +7,26 @@
 // automatically saved every time you quit Gmsh if the option
 // 'General.SaveOptions' is set.
 //
-General.Antialiasing = 1; // Use multisample antialiasing (will slow down rendering)
-General.BackgroundGradient = 3; // Draw background gradient (0: none, 1: vertical, 2: horizontal, 3: radial)
-General.BoundingBoxSize = 32.25335091896851; // Overall bounding box size (read-only)
-General.DrawBoundingBoxes = 1; // Draw bounding boxes
-General.MouseHoverMeshes = 1; // Enable mouse hover on meshes
-General.Terminal = 1; // Should information be printed on the terminal (if available)?
-General.Color.BackgroundGradient = {126,126,126}; // Background gradient color
-Geometry.HighlightOrphans = 1; // Highlight orphan entities (lines connected to a single surface, etc.)?
-Mesh.SurfaceFaces = 1; // Display faces of surface mesh?
-Mesh.Color.Lines = {78,78,78}; // Mesh line color
-Solver.AutoLoadDatabase = 1; // Automatically load the ONELAB database when launching a solver
+General.Antialiasing = 1;
+General.BackgroundGradient = 3;
+General.BoundingBoxSize = 3.464101615137754;
+General.DrawBoundingBoxes = 1;
+General.ExpertMode = 1;
+General.MouseHoverMeshes = 1;
+General.MouseInvertZoom = 1;
+General.Terminal = 1;
+General.Color.BackgroundGradient = {126,126,126};
+Geometry.HighlightOrphans = 1;
+Geometry.LineNumbers = 1;
+Geometry.OCCSewFaces = 1;
+Geometry.PointNumbers = 1;
+Geometry.Surfaces = 1;
+Geometry.SurfaceNumbers = 1;
+Geometry.Volumes = 1;
+Geometry.VolumeNumbers = 1;
+Mesh.Lines = 1;
+Mesh.Points = 1;
+Mesh.SurfaceFaces = 1;
+Mesh.VolumeFaces = 1;
+Mesh.Color.Lines = {78,78,78};
+Solver.AutoLoadDatabase = 1;

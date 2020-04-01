@@ -66,8 +66,10 @@ alias cat='bat' # https://github.com/sharkdp/bat
 # alias spotifyWeb="'`locate "*Google\ Chrome"`' --app="https://play.spotify.com"" # Spotify web client without all the junk
 alias ppPATH="echo $PATH | tr -s ':' '\n'"
 alias cincyWttr="curl https://wttr.in/Cincinnati"
-export OneDrive="$HOME/OneDrive - University of Cincinnati"
+alias OneDrive="cd '${HOME}/OneDrive - University of Cincinnati'"
 alias matlab='/Applications/MATLAB_R2016a.app/bin/matlab -nodesktop -nosplash'
+alias hdi='howdoi -n=3 -e=google -c' # $@ args
+alias jupyterEnv='source ~/pyVirtEnvs/jupyter/bin/activate'
 
 ##### PROMPT #####
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ " # Bash prompt becomes (username@hostname:cwd$ )
@@ -88,3 +90,7 @@ fi
 
 # Execute MOTD
 sh $HOME/bin/motd
+eval "$(register-python-argcomplete pipx)"
+
+# Created by `userpath` on 2020-03-30 22:35:20
+export PATH="$PATH:/Users/estysdesu/.local/bin"

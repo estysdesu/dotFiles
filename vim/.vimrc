@@ -47,7 +47,7 @@ let g:go_fmt_autosave = 1
 """ RUST """
 let g:rustfmt_autosave = 1
 """ BLACK """
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
 """ LIMELIGHT """
 let g:limelight_conceal_ctermfg = 'Gray'
 """ GOYO """
