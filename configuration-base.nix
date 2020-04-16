@@ -30,8 +30,10 @@
   ########## ########## ########## ########## ##########
   ########## LANGUAGE & TIME
   ########## ########## ########## ########## ##########
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.console.Font = "Lat2-Terminus16";
-  i18n.console.keyMap = "us";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    consoleFont = "Lat2-Terminus16";
+    consoleKeyMap = "us";
+  };
   time.timeZone = "America/Indianapolis";
 }
