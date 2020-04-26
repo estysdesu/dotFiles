@@ -2,11 +2,10 @@
 
 ##### SETUP #####
 sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done &> /dev/null # keep-alive: update existing `sudo` time stamp until finished
 
 echo "Starting bootstrapping..."
 ##### DISABLE RO ROOT ("/") #####
-read -p "Please disable SIP first by booting into recovery and running `csrutil disable`. If you've done this, please press [Enter]."
+read -p 'Please disable SIP first by booting into recovery and running `csrutil disable`. If you've done this, please press [Enter].'
 sudo spctl --master-disable # disable gatekeeper
 sudo mount -uw / # makes root folder writeable
 sudo killall Finder # makes root folder writeable
