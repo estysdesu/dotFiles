@@ -34,4 +34,4 @@ ln -sfn "$HOME/dotFiles/nvim" "$HOME/.config/nvim"
 ##### VS Code Insiders #####
 mkdir -p "$HOME/Library/Application Support/Code - Insiders/User"
 ln -sf "$HOME"/dotFiles/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code - Insiders/User/"
-ln -sfn "$HOME/dotFiles/vscode/snippets" "$HOME/Library/Application Support/Code/User - Insiders/snippets"
+ln -sfn "$HOME/dotFiles/vscode/snippets" "$HOME/Library/Application Support/Code - Insiders/User/snippets"
