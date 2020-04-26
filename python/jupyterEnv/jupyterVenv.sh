@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
-set -e 
+set -e
 
-HERE="${DOTFILES}/sbin/jupyterEnv" # use $(pwd) instead?
-ENVS_PATH="${HOME}/pyVirtEnvs"
+HERE="${DOTFILES}/python/jupyterEnv" # use $(pwd) instead?
+ENVS_PATH="${HOME}/pythonEnvs"
 JUPYTER_ENV="${ENVS_PATH}/jupyter"
 
 if [ ! -d ${JUPYTER_ENV} ]; then
@@ -16,11 +16,11 @@ envBin="${JUPYTER_ENV}/bin"
 export PATH="${envBin}:${PATH}" # add env's bin before rest of path
 
 echo 'Installing Python packages and Jupyter extensions'
-python -m pip install -qU pip 
-python -m pip install -qr requirements.txt 
-python -m pip install -qr requirements.user.txt 
-ipython kernel install --user --name=jupyter &> /dev/null 
-source postBuild &> /dev/null 
+python -m pip install -qU pip
+python -m pip install -qr requirements.txt
+python -m pip install -qr requirements.user.txt
+ipython kernel install --user --name=jupyter &> /dev/null
+source postBuild &> /dev/null
 source postBuild.user &> /dev/null
 
 echo 'Linking files'

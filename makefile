@@ -1,7 +1,7 @@
 dotfiles=${HOME}/dotFiles
 brewfile=$(dotfiles)/homebrew/Brewfile
 
-.PHONY: brew-update brew-install git-update sym-refresh update
+.PHONY: brew-update brew-install git-update sym-refresh
 
 update: brew-update git-update sym-refresh
 
@@ -15,7 +15,7 @@ brew-install:
 
 git-update:
 	@echo "Updating dotFiles github repository..."
-	@-(git add . && git commit -m "update dotfiles from make" && git push) > /dev/null 2>&1
+	@-(git add . && git commit -m "update dotfiles from make" && git push) &> /dev/null
 
 sym-refresh:
 	@echo "Refreshing all symlinks..."

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 warning=90
 bad=120
@@ -17,10 +17,10 @@ do
 
 	# read -a == readarry w/ delim as space; <<< redirect sends string
 	read -d' ' -a outArr <<< "$out"
-	
+
 	# use bash built in basic calculator for comparison of floats
 	if (( $(echo "${outArr[1]} > ${bad}" | bc -l) )) ; then
-		color=${red}	
+		color=${red}
 	elif (( $(echo "${outArr[1]} > ${warning}" | bc -l) )); then
 		color=${yellow}
 	else

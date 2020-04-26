@@ -15,11 +15,13 @@ node_modules/
 # Python #
 ###################
 venv/
+*env/
 .pynb_checkpoints/
 .ipynb_checkpoints/
 *.pyc
 __pycache__/
 .mypy_cache/
+*.egg-info/
 
 # Compiled source #
 ###################

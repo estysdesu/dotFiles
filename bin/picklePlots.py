@@ -21,7 +21,7 @@ if __name__ == "__main__":
             figOb = pickle.load(open(f, "rb"))
             figObs.append(figOb)
         else:
-            raise TypeError("invalid files passed")
+            raise TypeError("invalid file passed")
 
     figObs = [add_canvas(fig) for fig in figObs]
     plt.show(figObs)

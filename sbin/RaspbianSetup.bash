@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # TODO:
-# 	* fix probing disk if present -- diskutil currently ejects you from the script
+# 	* fix probing disk if present -- diskutil currently ejects you from the script -- use fdisk?
 
 
 ##### SETUP #####
 set -e # error handling
 trap abort SIGINT
 
-abort () { 
+abort () {
 	# A wrapper around exit that allows emitting a message on exit.
 	# Inputs:
 	# 	msg: str
@@ -41,17 +41,17 @@ RASP_FULL_URL='https://downloads.raspberrypi.org/raspbian_full_latest'
 while echo -e 'Which image would you like to download?\n\t1) Raspbian Lite\n\t2) Raspbian with Desktop\n\t3) Raspbian Desktop Full'; \
 	read -p 'Option: ' imgType; do
 	case "$imgType" in
-		1|lite) 
+		1|lite)
 			raspURL=$RASP_LITE_URL
-		       	raspType='lite' 
+		       	raspType='lite'
 			break ;;
-		2|desktop) 
+		2|desktop)
 			raspURL=$RASP_DESKTOP_URL
-			raspType='desktop' 
+			raspType='desktop'
 			break ;;
-		3|full) 
-			raspURL=$RASP_FULL_URL 
-			raspType='full' 
+		3|full)
+			raspURL=$RASP_FULL_URL
+			raspType='full'
 			break ;;
 		*) echo 'Invalid input. Please try again.'; sleep 1; continue ;;
 	esac
@@ -93,7 +93,7 @@ raspImg=$(ls "$raspBaseName"/*.img)
 
 ##### DISK SELECTION #####
 diskListResponse=$(diskutil list external)
-if [ "$diskListResponse" = "" ]; then 
+if [ "$diskListResponse" = "" ]; then
 	abort 'No external disks detected.'
 else
 	echo 'External disks: '
