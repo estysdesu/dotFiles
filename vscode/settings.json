@@ -96,6 +96,13 @@
                 ],
                 "jinja": true
             },
+            // {
+            //     "name": "Octave",
+            //     "type": "octave",
+            //     "request": "launch",
+            //     "program": "${file}",
+            //     "console": "integratedTerminal"
+            // },
             {
                 "name": "Rust (lldb)",
                 "type": "lldb",
@@ -184,5 +191,8 @@
         "*.nav",
         "*.gz"
     ],
-    "latex-workshop.latex.autoClean.run": "onBuilt"
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "python.insidersChannel": "weekly",
+    "python.sortImports.path": "isort",
+    "workbench.activityBar.visible": true
 }

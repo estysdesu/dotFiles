@@ -9,7 +9,7 @@ mkdir -p "$XDG_DATA_HOME"
 mkdir -p "$XDG_CONFIG_HOME/alacritty"
 ln -sf "$HOME/dotFiles/alacritty/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
 ##### Bash #####
-ln -sf "$HOME/dotFiles/bash/{.bash_profile,.bashrc}" "$HOME/"
+ln -sf "$HOME"/dotFiles/bash/{.bash_profile,.bashrc} "$HOME/"
 ##### Bin [user] #####
 ln -sfn "$HOME/dotFiles/bin" "$HOME/bin"
 ##### Homebrew #####
@@ -25,11 +25,15 @@ ln -sf "$HOME/dotFiles/neofetch/config.conf" "$HOME/.config/neofetch/"
 ##### Node #####
 ln -sf "$HOME/dotFiles/node/.npmrc" "$HOME/"
 ##### Prusa Slicer #####
+mkdir -p "$HOME/Library/Application Support/PrusaSlicer"
 ln -sfn "$HOME"/dotfiles/prusaSlicer/{printer,'print',filament} "$HOME/Library/Application Support/PrusaSlicer/"
 ##### Tmux #####
 ln -sf "$HOME/dotFiles/tmux/.tmux.conf" "$HOME/"
 ##### NEOVIM #####
 ln -sfn "$HOME/dotFiles/nvim" "$HOME/.config/nvim"
 ##### VS Code Insiders #####
+mkdir -p "$HOME/Library/Application Support/Code - Insiders/User"
 ln -sf "$HOME"/dotFiles/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code - Insiders/User/"
-ln -sfn "$HOME/dotFiles/vscode/snippets" "$HOME/Library/Application Support/Code/User - Insiders/snippets"
+ln -sfn "$HOME/dotFiles/vscode/snippets" "$HOME/Library/Application Support/Code - Insiders/User/snippets"
+##### ZSH #####
+ln -sf "$HOME"/dotFiles/zsh/{.zshrc,.zshenv} "$HOME/"

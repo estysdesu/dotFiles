@@ -1,0 +1,89 @@
+##### GLOBAL ENV #####
+
+##### FUNCTIONS #####
+# path_munge: change the PATH variable more efficiently
+path_munge () {
+	if ! echo "$PATH" | grep -Eq "(^|:)$1($|:)"; then
+		if [ "$2" = "after" ]; then
+              		PATH="$PATH:$1"
+      	  	elif [ "$2" = "before" ]; then
+			PATH="$1:$PATH"
+		else
+              		PATH="$1:$PATH"
+           	fi
+		export PATH
+        fi
+}
+
+# silent: silence the output of functions unless `DEBUG=1` is set
+silent() {
+  if [ "$DEBUG" != "1" ] ; then
+    "$@"
+  else
+    "$@" &>/dev/null
+  fi
+}
+
+##### VARS #####
+# XDG Dirs
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+# Dots
+export DOTFILES="$HOME/dotFiles"
+
+# OneDrive
+export ONEDRIVE="$HOME/OneDrive - University of Cincinnati"
+
+# Jupyter
+export JUPYTER="$HOME/.python/venvs/jupyter/bin/activate"
+
+# Editor
+alias vim="nvim"
+export EDITOR="nvim"
+
+##### PATH #####
+# Tmux (ignore path_helper)
+if [ -n "$TMUX" ]; then
+	if [ -f /etc/profile ]; then
+    		PATH=""
+    		source /etc/profile
+	fi
+fi
+
+# Homebrew
+if [ -n "$(which brew)" ]; then
+	export HOMEBREW_AUTO_UPDATE_SECS=604800 # homebrew only update once a week
+	BREW_PRE="$(brew --prefix)"
+	BREW_OPT="$BREW_PRE/opt"
+	BREW_BIN="$BREW_PRE/bin"
+	
+	path_munge "$BREW_BIN" before
+	path_munge "$BREW_PRE/sbin" before # brew sbin
+	path_munge "$BREW_OPT/coreutils/libexec/gnubin" before # brew coreutils
+	path_munge "$BREW_OPT/llvm/bin" before # brew llvm
+	path_munge "$BREW_OPT/ruby/bin" before # brew Ruby
+	path_munge "$BREW_OPT/sqlite/bin" before # brew SQLite
+
+	path_munge "$HOME/.local/bin" before  # pipx
+	path_munge "$HOME/.pyenv/bin" before  # pyenv
+	path_munge "$XDG_DATA_HOME/npm-global/bin" after # Node & NPM
+
+	export GOROOT="$BREW_OPT/go/libexec" # Go
+	export GOPATH="$HOME/.go" # Go
+	path_munge "$GOROOT/bin" after # Go
+	path_munge "$GOPATH/bin" after # Go
+	path_munge "$HOME/.cargo/bin" after # Rust & Cargo
+fi
+path_munge "$HOME/bin" before
+
+##### INITIALIZE #####
+# Homebrew
+if [ -n "$(which brew)" ]; then
+	eval "$(register-python-argcomplete pipx)" # pipx
+	eval "$(pyenv init -)" # pyenv
+	eval "$(pyenv virtualenv-init -)" # pyenv-virtualenv
+	export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+fi
+
+
