@@ -28,7 +28,5 @@ function update_prompt() {
 }
 precmd() { update_prompt }
 
-export PS1="%{$fg[yellow]%}[%~]${prompt_newline}%{$fg[blue]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$reset_color%}%# " # prompt becomes ([cwd]'\n'username@hostname % )
-
 # Execute MOTD
 sh $HOME/bin/motd.sh
