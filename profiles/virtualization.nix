@@ -1,15 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    virtualbox
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   virtualboxWithExtpack
+  # ];
 
-  virtualization.virtualbox.host = {
+  virtualisation.virtualbox.host = {
     enable = true;
     enableExtensionPack = true;
   };

@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  let with pkgs;
+  environment.systemPackages = with pkgs; 
+  let
     qbittorrent-nox = qbittorrent.override { guiSupport = false; };
-  in
-    environment.systemPackages = [ qbittorrent-nox ];
+  in 
+    [ qbittorrent-nox ];
+
+#   environment.systemPackages = [ qbittorrent-nox ];
 }
       
 
