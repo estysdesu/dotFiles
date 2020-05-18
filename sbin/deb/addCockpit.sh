@@ -16,7 +16,7 @@ if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
 	exit 1
 fi
 
-apt install cockpit \
+apt install -y cockpit \
 	cockpit-dashboard \
 	cockpit-packagekit \
 	cockpit-networkmanager \
