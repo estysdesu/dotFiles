@@ -15,11 +15,10 @@ if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
 	exit 1
 fi
 
-apt install \
-  cockpit \
-  cockpit-dashboard \
-  cockpit-packagekit \
-  cockpit-networkmanager \
-  cockpit-storaged \
-  cockpit-machines \
-  cockpit-docker
+apt install cockpit \
+	cockpit-dashboard \
+	cockpit-packagekit \
+	cockpit-networkmanager \
+	cockpit-storaged \
+	cockpit-machines \
+	cockpit-docker
