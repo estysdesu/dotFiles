@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath>
 
 set -e
 
