@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath>
 
 set -e
 
@@ -7,9 +8,8 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1
 fi
 
-echo "deb http://ppa.launchpad.net/mmstick76/alacritty/ubuntu bionic main" | tee /etc/apt/sources.list.d/alacritty.list
+echo "deb http://ppa.launchpad.net/mmstick76/alacritty/ubuntu focal \
+	main" > /etc/apt/sources.list.d/alacritty.list
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 5B7FC40A404FAD98548806028AC9B4BBBAB4900B
 apt update
 apt install alacritty
-
-tic -xe alacritty,alacritty-direct extra/alacritty.info
