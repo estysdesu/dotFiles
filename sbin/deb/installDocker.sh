@@ -22,8 +22,10 @@ PROGRAM_NAME='docker'
 KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
 SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
+echo 'NOTE: Docker is packaged in recent Debian and Ubuntu releases as docker.io and docker-compose. This install follows the recommended steps on Docker\'s website.'
+
 if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ "$#" -eq 0 ]; then
-	echo "installing..."
+	echo "Installing..."
 	apt install -y apt-transport-https \
 		ca-certificates \
 		curl \
@@ -38,7 +40,7 @@ if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ "$#" -eq 0 ];
 		docker-compose \
 		containerd.io # apt packages
 elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ]; then
-	echo "uninstalling..."
+	echo "Uninstalling..."
 	rm "$KEYRING_FILE" # apt key
 	rm "$SOURCE_FILE" # apt source
 	apt remove --purge -y docker-ce \
