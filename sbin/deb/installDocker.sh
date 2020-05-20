@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
-# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> [install/uninstall] | sh
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | [UNINSTALL=1] sh 
 
-set -e
+set -e # set -o errexit
+set -u # set -o nounset
+set -o pipefail
+set -x # set -o xtrace
 
 if [ "$(id -u)" -ne 0 ]; then
 	echo "This script needs to be run as root" >&2
@@ -35,7 +38,7 @@ if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; 
 		docker-ce-cli \
 		docker-compose \
 		containerd.io # apt packages
-elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ]; then
+elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ] || [ $UNINSTALL -eq 1 ]; then
 	echo "uninstalling..."
 	rm "$KEYRING_FILE" # apt key
 	rm "$SOURCE_FILE" # apt source
