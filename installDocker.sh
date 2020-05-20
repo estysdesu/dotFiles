@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | sh
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> [install/uninstall] | sh
 
 set -e
 
@@ -19,7 +19,7 @@ fi
 KEYRING_FILE='/etc/apt/trusted.gpg.d/docker.gpg'
 SOURCE_FILE='/etc/apt/sources.list.d/docker.list'
 
-if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ]; then
+if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; then
 	echo "installing..."
 	apt install -y apt-transport-https \
 		ca-certificates \
