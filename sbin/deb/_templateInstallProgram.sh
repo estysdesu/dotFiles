@@ -24,10 +24,10 @@ KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
 SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
 if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ "$#" -eq 0 ]; then
-	echo "installing...(unimplemented)"
+	echo "Installing...(unimplemented)"
 	exit 1
 elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ]; then
-	echo "uninstalling...(unimplemented)"
+	echo "Uninstalling...(unimplemented)"
 	exit 1
 else
 	echo "This script can only be used to install/uninstall" >&2
