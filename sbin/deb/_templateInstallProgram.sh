@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | [UNINSTALL=1] sh 
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | sh [-s -- uninstall] 
 
 set -e # set -o errexit
 set -u # set -o nounset
@@ -24,11 +24,11 @@ KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
 SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
 if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ "$#" -eq 0 ]; then
-	echo "installing..."
-
-elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ] || [ "${UNINSTALL:+1}" -eq 1]; then
-	echo "uninstalling..."
-
+	echo "installing...(unimplemented)"
+	exit 1
+elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ]; then
+	echo "uninstalling...(unimplemented)"
+	exit 1
 else
 	echo "This script can only be used to install/uninstall" >&2
 	exit 1
