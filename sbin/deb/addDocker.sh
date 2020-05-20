@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath>
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | sh
 
 set -e
 
@@ -16,6 +16,9 @@ if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
 	exit 1
 fi
 
+KEYRING_FILE='/etc/apt/trusted.gpg.d/docker.gpg'
+SOURCE_FILE='/etc/apt/sources.list.d/docker.list'
+
 if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ]; then
 	echo "installing..."
 	apt install -y apt-transport-https \
@@ -23,9 +26,9 @@ if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ]; then
 		curl \
 		gnupg-agent \
 		software-properties-common
-	curl -fsSL "https://download.docker.com/linux/$DISTRO/gpg" | apt-key --keyring /etc/apt/trusted.gpg.d/docker.gpg add - # apt key
+	curl -fsSL "https://download.docker.com/linux/$DISTRO/gpg" | apt-key --keyring "$KEYRING_FILE" add - # apt key
 	echo "deb [arch=amd64] https://download.docker.com/linux/$DISTRO $CODENAME \
-		stable" > /etc/apt/sources.list.d/docker.list # apt source
+		stable" > "$SOURCE_FILE" # apt source
 	apt update
 	apt install -y docker-ce \
 		docker-ce-cli \
@@ -33,8 +36,8 @@ if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ]; then
 		containerd.io # apt packages
 elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ]; then
 	echo "uninstalling..."
-	rm /etc/apt/trusted.gpg.d/docker.gpg # apt key
-	rm /etc/apt/sources.list.d/docker.list # apt source
+	rm "$KEYRING_FILE" # apt key
+	rm "$SOURCE_FILE" # apt source
 	apt remove --purge -y docker-ce \
 		docker-ce-cli \
 		docker-compose \
