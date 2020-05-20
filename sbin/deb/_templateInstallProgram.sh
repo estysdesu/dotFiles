@@ -17,3 +17,17 @@ if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
 fi
 
 ##### START HERE #####
+PROGRAM_NAME='<program-name>'
+KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
+SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
+
+if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; then
+	echo "installing..."
+
+elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ]; then
+	echo "uninstalling..."
+
+else
+	echo "This script can only be used to install/uninstall" >&2
+	exit 1
+fi
