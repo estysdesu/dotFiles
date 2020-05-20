@@ -38,7 +38,7 @@ if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; 
 		docker-ce-cli \
 		docker-compose \
 		containerd.io # apt packages
-elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ] || [ ${UNINSTALL+1} -eq 1 ]; then
+elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ] || [ "${UNINSTALL:+1}" -eq 1 ]; then
 	echo "uninstalling..."
 	rm "$KEYRING_FILE" # apt key
 	rm "$SOURCE_FILE" # apt source
