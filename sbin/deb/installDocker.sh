@@ -3,7 +3,6 @@
 
 set -e # set -o errexit
 set -u # set -o nounset
-set -o pipefail
 # set -x # set -o xtrace
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -23,7 +22,7 @@ PROGRAM_NAME='docker'
 KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
 SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
-if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; then
+if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ $# -eq 0 ]; then
 	echo "installing..."
 	apt install -y apt-transport-https \
 		ca-certificates \
@@ -38,7 +37,7 @@ if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; 
 		docker-ce-cli \
 		docker-compose \
 		containerd.io # apt packages
-elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ] || [ "${UNINSTALL:+1}" -eq 1 ]; then
+elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ] || [ "${UNINSTALL:+1}" -eq 1 ]; then
 	echo "uninstalling..."
 	rm "$KEYRING_FILE" # apt key
 	rm "$SOURCE_FILE" # apt source
