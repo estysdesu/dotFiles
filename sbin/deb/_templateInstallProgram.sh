@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 # wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> [install/uninstall] | sh
 
-set -e
+set -e # set -o errexit
+set -u # set -o nounset
+set -o pipefail
+# set -x # set -o xtrace
 
 if [ "$(id -u)" -ne 0 ]; then
 	echo "This script needs to be run as root" >&2
