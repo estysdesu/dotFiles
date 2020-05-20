@@ -16,8 +16,9 @@ if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
 	exit 1
 fi
 
-KEYRING_FILE='/etc/apt/trusted.gpg.d/docker.gpg'
-SOURCE_FILE='/etc/apt/sources.list.d/docker.list'
+PROGRAM_NAME='docker'
+KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
+SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
 if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; then
 	echo "installing..."
