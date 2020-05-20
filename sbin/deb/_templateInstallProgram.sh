@@ -1,9 +1,8 @@
 #!/usr/bin/env sh
-# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> [install/uninstall] | sh
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | [UNINSTALL=1] sh 
 
 set -e # set -o errexit
 set -u # set -o nounset
-set -o pipefail
 # set -x # set -o xtrace
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -24,10 +23,10 @@ PROGRAM_NAME='<program-name>'
 KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
 SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
-if [ "$(echo "$1" | awk '{print tolower($0)}')" == "install" ] || [ $# -eq 0 ]; then
+if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ "$#" -eq 0 ]; then
 	echo "installing..."
 
-elif [ "$(echo "$1" | awk '{print tolower($0)}')" == "uninstall" ]; then
+elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ] || [ "${UNINSTALL:+1}" -eq 1]; then
 	echo "uninstalling..."
 
 else
