@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath>
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> [install/uninstall] | sh
 
 set -e
 
