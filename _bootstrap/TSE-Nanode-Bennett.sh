@@ -20,7 +20,7 @@ fi
 
 PROGRAM_NAME='bootstrap'
 
-wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | eval
+wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | . /dev/stdin
 
 echo "$(blue 'Installing server utilities...')"
 apt install -y sudo \
@@ -32,11 +32,11 @@ for URL in $COCKPIT_URL $DOCKER_URL; do
 	wget -qO - $URL | eval
 done
 
-echo "blue 'Setting up admin/sudo user...'"
+echo "$(blue 'Setting up admin/sudo user...')"
 echo 'Username: '; read -r USERNAME
 echo 'Password: '; read -r PASSWORD
 useradd -m -G sudo "$USERNAME"
 echo "$USERNAME:$PASSWORD" | chpasswd
 
-blue 'Setup complete.'
-blue "SSH Access: ssh $USERNAME@$(hostname -I | awk '{print $1}')"
+echo "$(blue 'Setup complete.')"
+echo "$(blue "SSH Access: ssh $USERNAME@$(hostname -I | awk '{print $1}')")"
