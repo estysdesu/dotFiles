@@ -3,7 +3,7 @@
 
 set -e # set -o errexit
 set -u # set -o nounset
-set -x # set -o xtrace
+# set -x # set -o xtrace
 
 if [ "$(id -u)" -ne 0 ]; then
 	echo "This script needs to be run as root" >&2
@@ -20,11 +20,53 @@ fi
 
 ##### SETUP #####
 PROGRAM_NAME='bootstrap'
-echo "$(blue 'Beginning bootstrap...')"
-wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | . /dev/stdin
+
+colorOutput() {
+  PRE="\033[${1}m"
+  POST='\033[0m'
+  if [ "$#" -gt 1 ]; then
+    TEXT="$(echo "$@" | awk '{for (i=2; i<=NF; i++) printf "%s ", $i}')"
+    printf "${PRE}%s${POST}" "$TEXT"
+  else # stdin input
+    printf "$PRE"
+    cat
+    printf "$POST"
+  fi  
+}
+
+red() {
+   colorOutput 31 "$@"
+}
+
+green() {
+   colorOutput 32 "$@"
+}
+
+yellow() {
+   colorOutput 33 "$@"
+}
+
+blue() {
+   colorOutput 34 "$@"
+}
+
+progressMark() {
+  printf '%s' "$(blue '→')"
+}
+
+checkMark() {
+  printf '%s' "$(green '✓')"
+}
+
+failMark() {
+  printf '%s' "$(red '✗')"
+}
+
+echo "$(progressMark 'Beginning bootstrap...')"
+# wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | . /dev/stdin
 
 ##### UTILITIES #####
-echo "$(blue 'Installing server utilities...')"
+echo "$(progressMark 'Installing server utilities...')"
 apt install -y sudo \
 	ufw \
 	neovim \
@@ -41,7 +83,7 @@ ufw enable && \
 echo "$(checkMark 'Done')"
 
 ##### USER #####
-echo "$(blue 'Setting up admin/sudo user...')"
+echo "$(progressMark 'Setting up admin/sudo user...')"
 echo 'Full name: '; read -r FULL_NAME
 echo 'Username: '; read -r USERNAME
 echo 'Password: '; read -r PASSWORD
@@ -50,7 +92,7 @@ echo "$USERNAME:$PASSWORD" | chpasswd
 echo "$(checkMark 'Done')"
 
 ##### MOUNT VOLUME #####
-# echo "$(blue 'Mounting drives...')"
+# echo "$(progressMark 'Mounting drives...')"
 # echo 'Drive location: '; read -r DEVICE_PATH
 # echo 'Mount location: '; read -r MOUNT_PATH
 # echo 'Format?: [0=no/1=yes]'; read -r FORMAT
