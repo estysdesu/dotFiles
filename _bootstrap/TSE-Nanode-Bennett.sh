@@ -27,7 +27,7 @@ apt install -y sudo \
 COCKPIT_URL="https://raw.githubusercontent.com/estysdesu/dotFiles/linux/sbin/deb/installCockpit.sh"
 DOCKER_URL="https://raw.githubusercontent.com/estysdesu/dotFiles/linux/sbin/deb/installDocker.sh"
 for URL in $COCKPIT_URL $DOCKER_URL; do
-	wget -qO - $URL | source
+	wget -qO - $URL | eval
 done
 
 echo 'Setting up admin/sudo user...'
