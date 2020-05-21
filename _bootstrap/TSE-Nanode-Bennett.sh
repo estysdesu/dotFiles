@@ -44,7 +44,7 @@ echo "$(checkMark 'Done')"
 echo "$(blue 'Setting up admin/sudo user...')"
 echo 'Username: '; read -r USERNAME
 echo 'Password: '; read -r PASSWORD
-useradd -m -G sudo "$USERNAME"
+useradd -m -G sudo -G docker "$USERNAME"
 echo "$USERNAME:$PASSWORD" | chpasswd
 echo "$(checkMark 'Done')"
 
