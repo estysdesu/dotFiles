@@ -31,9 +31,9 @@ for URL in $COCKPIT_URL $DOCKER_URL; do
 done
 
 echo 'Setting up admin/sudo user...'
-read -s 'Username: ' USERNAME
-read -sp 'Password: ' PASSWORD
-useradd -m -G sudo $USERNAME
+read -r 'Username: ' USERNAME
+read -r 'Password: ' PASSWORD # -p is not POSIX
+useradd -m -G sudo "$USERNAME"
 echo "$USERNAME:$PASSWORD" | chpasswd
 
 echo 'Setup complete.'
