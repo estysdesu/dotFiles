@@ -46,8 +46,8 @@ elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ]; then
 	apt remove --purge -y docker-ce \
 		docker-ce-cli \
 		docker-compose \
-		containerd.io \
-		&& apt autoremove -y # apt packages
+		containerd.io # apt packages
+	apt autoremove -y
 	apt update 
 else
 	echo "This script can only be used to install/uninstall" >&2
