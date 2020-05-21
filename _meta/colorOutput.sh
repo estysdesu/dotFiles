@@ -35,3 +35,12 @@ yellow() {
 blue() {
    colorOutput 34 "$@"
 }
+
+statusMark() {
+  if [ "$1" -eq 1 ]; then
+    MARK=$(red '✗')
+  else
+    MARK=$(green '✓')
+  fi 
+  printf '%s' "$MARK"
+}
