@@ -39,7 +39,7 @@ elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ]; then
 		cockpit-networkmanager \
 		cockpit-storaged \
 		cockpit-machines \
-		cockpit-docker # apt packages
+		cockpit-docker
 	apt autoremove -y 
 	apt update 
 else
