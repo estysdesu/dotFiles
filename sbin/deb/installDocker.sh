@@ -31,22 +31,22 @@ if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ "$#" -eq 0 ];
 		curl \
 		gnupg-agent \
 		software-properties-common
-	curl -fsSL "https://download.docker.com/linux/$DISTRO/gpg" | apt-key --keyring "$KEYRING_FILE" add - # apt key
+	curl -fsSL "https://download.docker.com/linux/$DISTRO/gpg" | apt-key --keyring "$KEYRING_FILE" add -
 	echo "deb [arch=amd64] https://download.docker.com/linux/$DISTRO $CODENAME \
-		stable" > "$SOURCE_FILE" # apt source
+		stable" > "$SOURCE_FILE"
 	apt update
 	apt install -y docker-ce \
 		docker-ce-cli \
 		docker-compose \
-		containerd.io # apt packages
+		containerd.io
 elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ]; then
 	echo "Uninstalling..."
-	rm "$KEYRING_FILE" # apt key
-	rm "$SOURCE_FILE" # apt source
+	rm "$KEYRING_FILE"
+	rm "$SOURCE_FILE"
 	apt remove --purge -y docker-ce \
 		docker-ce-cli \
 		docker-compose \
-		containerd.io # apt packages
+		containerd.io
 	apt autoremove -y
 	apt update 
 else
