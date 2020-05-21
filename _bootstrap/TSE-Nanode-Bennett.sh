@@ -20,7 +20,7 @@ fi
 
 PROGRAM_NAME='bootstrap'
 
-wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | eval # get colors
+wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | eval
 
 echo "$(blue 'Installing server utilities...')"
 apt install -y sudo \
