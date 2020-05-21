@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | s 
+# wget -qO - https://raw.githubusercontent.com/<user>/<repo>/<filepath> | sh
 
 set -e # set -o errexit
 set -u # set -o nounset
@@ -18,9 +18,23 @@ if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
 	exit 1
 fi
 
-##### START HERE #####
 PROGRAM_NAME='bootstrap'
-# KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
-# SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
-apt install neovim \
+echo 'Installing server utilities...'
+apt install -y sudo \
+	neovim \
+	tmux 
+COCKPIT_URL="https://raw.githubusercontent.com/estysdesu/dotFiles/linux/sbin/deb/installCockpit.sh"
+DOCKER_URL="https://raw.githubusercontent.com/estysdesu/dotFiles/linux/sbin/deb/installDocker.sh"
+for URL in $COCKPIT_URL $DOCKER_URL; do
+	wget -qO - $URL | source
+done
+
+echo 'Setting up admin/sudo user...'
+read -s 'Username: ' USERNAME
+read -sp 'Password: ' PASSWORD
+useradd -m -G sudo $USERNAME
+echo "$USERNAME:$PASSWORD" | chpasswd
+
+echo 'Setup complete.'
+echo "SSH Access: ssh $USERNAME@$(hostname -I | awk '{print $1}')"
