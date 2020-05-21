@@ -26,6 +26,7 @@ wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/col
 ##### UTILITIES #####
 echo "$(blue 'Installing server utilities...')"
 apt install -y sudo \
+	ufw \
 	neovim \
 	tmux 
 COCKPIT_URL="https://raw.githubusercontent.com/estysdesu/dotFiles/linux/sbin/deb/installCockpit.sh"
@@ -33,6 +34,10 @@ DOCKER_URL="https://raw.githubusercontent.com/estysdesu/dotFiles/linux/sbin/deb/
 for URL in $COCKPIT_URL $DOCKER_URL; do
 	wget -qO - $URL | sh
 done
+ufw enable && \
+	ufw allow 22 && \
+	ufw allow 9090/tcp && \
+	ufw reload
 echo "$(checkMark 'Done')"
 
 ##### USER #####
