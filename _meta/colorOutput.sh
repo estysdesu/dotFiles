@@ -20,18 +20,18 @@ colorOutput() {
   fi  
 }
 
-red() {
+export red() {
    colorOutput 31 "$@"
 }
 
-green() {
+export green() {
    colorOutput 32 "$@"
 }
 
-yellow() {
+export yellow() {
    colorOutput 33 "$@"
 }
 
-blue() {
+export blue() {
    colorOutput 34 "$@"
 }
