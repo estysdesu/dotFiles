@@ -3,7 +3,7 @@
 
 set -e # set -o errexit
 set -u # set -o nounset
-set -x # set -o xtrace
+# set -x # set -o xtrace
 
 if [ "$(id -u)" -ne 0 ]; then
 	echo "This script needs to be run as root" >&2
