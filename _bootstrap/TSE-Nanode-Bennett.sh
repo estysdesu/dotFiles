@@ -19,8 +19,9 @@ if [ "$DISTRO" != "debian" ] && [ "$DISTRO" != "ubuntu" ]; then
 fi
 
 PROGRAM_NAME='bootstrap'
+wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | eval
 
-echo 'Installing server utilities...'
+blue 'Installing server utilities...'
 apt install -y sudo \
 	neovim \
 	tmux 
@@ -30,11 +31,11 @@ for URL in $COCKPIT_URL $DOCKER_URL; do
 	wget -qO - $URL | eval
 done
 
-echo 'Setting up admin/sudo user...'
+blue 'Setting up admin/sudo user...'
 echo 'Username: '; read -r USERNAME
 echo 'Password: '; read -r PASSWORD
 useradd -m -G sudo "$USERNAME"
 echo "$USERNAME:$PASSWORD" | chpasswd
 
-echo 'Setup complete.'
-echo "SSH Access: ssh $USERNAME@$(hostname -I | awk '{print $1}')"
+blue 'Setup complete.'
+blue "SSH Access: ssh $USERNAME@$(hostname -I | awk '{print $1}')"
