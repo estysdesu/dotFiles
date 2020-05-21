@@ -36,11 +36,14 @@ blue() {
    colorOutput 34 "$@"
 }
 
-statusMark() {
-  if [ "$1" -eq 1 ]; then
-    MARK=$(red '✗')
-  else
-    MARK=$(green '✓')
-  fi 
-  printf '%s' "$MARK"
+progressMark() {
+  printf '%s' "$(blue '→')"
+}
+
+checkMark() {
+  printf '%s' "$(green '✓')"
+}
+
+failMark() {
+  printf '%s' "$(red '✗')"
 }
