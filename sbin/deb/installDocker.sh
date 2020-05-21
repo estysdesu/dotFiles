@@ -22,7 +22,7 @@ PROGRAM_NAME='docker'
 KEYRING_FILE="/etc/apt/trusted.gpg.d/${PROGRAM_NAME}.gpg"
 SOURCE_FILE="/etc/apt/sources.list.d/${PROGRAM_NAME}.list"
 
-echo 'NOTE: Docker is packaged in recent Debian and Ubuntu releases as docker.io and docker-compose. This install follows the recommended steps on Docker\'s website.'
+echo 'NOTE: Docker is packaged in recent Debian and Ubuntu releases as docker.io and docker-compose. This install follows the recommended steps on Docker'\''s website.'
 
 if [ "$(echo "$1" | awk '{print tolower($0)}')" = "install" ] || [ "$#" -eq 0 ]; then
 	echo "Installing..."
