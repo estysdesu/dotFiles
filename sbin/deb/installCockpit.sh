@@ -39,8 +39,8 @@ elif [ "$(echo "$1" | awk '{print tolower($0)}')" = "uninstall" ]; then
 		cockpit-networkmanager \
 		cockpit-storaged \
 		cockpit-machines \
-		cockpit-docker \
-		&& apt autoremove -y # apt packages
+		cockpit-docker # apt packages
+	apt autoremove -y 
 	apt update 
 else
 	echo "This script can only be used to install/uninstall" >&2
