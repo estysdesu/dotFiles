@@ -62,7 +62,8 @@ failMark() {
   printf '%s' "$(red '✗')"
 }
 
-echo "$(progressMark 'Beginning bootstrap...')"
+printf "%s " progressMark 'Beginnning bootstrap...'; 
+# echo "$(progressMark 'Beginning bootstrap...')"
 # wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | . /dev/stdin
 
 ##### UTILITIES #####
