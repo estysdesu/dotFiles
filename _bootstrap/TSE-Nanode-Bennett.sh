@@ -32,7 +32,7 @@ for URL in $COCKPIT_URL $DOCKER_URL; do
 	wget -qO - $URL | eval
 done
 
-blue 'Setting up admin/sudo user...'
+echo "blue 'Setting up admin/sudo user...'"
 echo 'Username: '; read -r USERNAME
 echo 'Password: '; read -r PASSWORD
 useradd -m -G sudo "$USERNAME"
