@@ -3,7 +3,7 @@
   imports = [
     ../profiles/sound.nix
     ../profiles/awesome.nix
-    ../profiles/virtualization.nix
+    # ../profiles/virtualization.nix
     ../services/networkManager.nix
     ../services/plex.nix
     ../services/printing.nix
@@ -75,9 +75,7 @@
         teamviewer
         telegram
         # tunnelblick # needs alternative (for use with wireguard?)
-        vscode.override { isInsiders = true; }
-        virtualboxWithExtpack
-        
+        vscode.override { isInsiders = true; }        
          
       ];
     };
