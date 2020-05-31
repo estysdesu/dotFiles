@@ -66,6 +66,8 @@ printf "%s " progressMark 'Beginnning bootstrap...';
 # echo "$(progressMark 'Beginning bootstrap...')"
 # wget -qO - "https://raw.githubusercontent.com/estysdesu/dotFiles/linux/_meta/colorOutput.sh" | . /dev/stdin
 
+
+# systemd-network static ip setup https://www.linode.com/docs/networking/linux-static-ip-configuration/
 ##### UTILITIES #####
 echo "$(progressMark 'Installing server utilities...')"
 apt install -y sudo \
