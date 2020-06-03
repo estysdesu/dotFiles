@@ -20,7 +20,7 @@ silent() {
   if [ "$DEBUG" != "1" ] ; then
     "$@"
   else
-    "$@" &>/dev/null
+    "$@" > /dev/null 2>&1
   fi
 }
 
@@ -35,9 +35,6 @@ export DOTFILES="$HOME/dotFiles"
 # OneDrive
 export ONEDRIVE="$HOME/OneDrive - University of Cincinnati"
 
-# Jupyter
-export JUPYTER="$HOME/.python/venvs/jupyter/bin/activate"
-
 # Editor
 alias vim="nvim"
 export EDITOR="nvim"
@@ -47,7 +44,7 @@ export EDITOR="nvim"
 if [ -n "$TMUX" ]; then
 	if [ -f /etc/profile ]; then
     		PATH=""
-    		source /etc/profile
+    		. /etc/profile
 	fi
 fi
 
@@ -85,5 +82,3 @@ if [ -n "$(which brew)" ]; then
 	eval "$(pyenv virtualenv-init -)" # pyenv-virtualenv
 	export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
-
-

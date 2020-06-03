@@ -2,8 +2,9 @@ source "$HOME/dotFiles/env"
 
 ##### ALIASES & GLOBALS #####
 alias rebash="source $HOME/.bash_profile" # reload bash profile
-alias grep='grep --color' # colorize grep match
-alias ls='ls -GFh'
+alias grep=rg # alias grep='grep --color' # colorize grep match
+alias ls=lsd # alias ls='ls -GFh'
+alias cat=bat
 alias ppPATH="echo $PATH | tr -s ':' '\n'"
 alias cincyWttr="curl https://wttr.in/Cincinnati"
 

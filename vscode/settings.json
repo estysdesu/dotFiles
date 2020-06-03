@@ -134,7 +134,7 @@
     "debug.enableAllHovers": true,
     "debug.inlineValues": true,
     // Python
-    "python.venvPath": "${workspaceFolder}/venv",
+    "python.venvPath": "${env:HOME}/.pyenv/versions",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "python.linting.ignorePatterns": [
@@ -192,7 +192,18 @@
         "*.gz"
     ],
     "latex-workshop.latex.autoClean.run": "onBuilt",
-    "python.insidersChannel": "weekly",
+    "python.insidersChannel": "off",
     "python.sortImports.path": "isort",
-    "workbench.activityBar.visible": true
+    "workbench.activityBar.visible": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "default",
+            "filenamePattern": "*.html"
+        },
+        {
+            "viewType": "default",
+            "filenamePattern": "*.stl"
+        }
+    ],
+    "todo-tree.tree.showScanModeButton": false
 }

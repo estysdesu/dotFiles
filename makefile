@@ -1,23 +1,20 @@
-dotfiles=${HOME}/dotFiles
-brewfile=$(dotfiles)/homebrew/Brewfile
-
 .PHONY: brew-update brew-install git-update sym-refresh
 
 update: brew-update git-update sym-refresh
 
 brew-update:
 	@echo "Updating Brewfile with all current Homebrew packages..."
-	@brew bundle dump --file=$(brewfile) --force
+	@brew bundle dump --force
 
 brew-install:
 	@echo "Installing Homebrew packages in Brewfile..."
-	@brew bundle --file=$(brewfile)
+	@brew bundle 
 
 git-update:
 	@echo "Updating dotFiles github repository..."
-	@-(git add . && git commit -m "update dotfiles from make" && git push) &> /dev/null
+	@-(git add . && git commit -m "update dotfiles from make" && git push) > /dev/null 2>&1
 
 sym-refresh:
 	@echo "Refreshing all symlinks..."
-	@sh $(dotfiles)/symLinks.bash &> /dev/null
+	@sh $(dotfiles)/symLinks.bash > /dev/null 2>&1
 

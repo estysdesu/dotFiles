@@ -1,2 +1,6 @@
+wheel
+setuptools
+pip
+upgrade-ensurepip
 black
 mypy

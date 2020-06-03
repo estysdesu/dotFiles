@@ -62,6 +62,8 @@ map <silent> <C-E> :call ToggleVExplorer()<CR>
 """"" MISC """""
 " filetype plugin indent on
 " set backspace=indent,eol,start
+autocmd Filetype bash setlocal tabstop=4
+autocmd Filetype sh setlocal tabstop=4
 set mouse=nicr " set mouse=a
 syntax enable
 set encoding=utf-8

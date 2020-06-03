@@ -268,11 +268,11 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/local/bin/zsh
+  program: /usr/local/bin/bash
   args:
-    - --login
+    - --login 
     - -c
-    - tmux attach -t base || tmux new -s base
+    - 'tmux attach -t base || tmux new -s base'
 
 # Startup directory
 #

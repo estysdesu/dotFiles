@@ -10,7 +10,7 @@ source "$HOME/dotFiles/env"
 
 ##### ALIASES & GLOBALS #####
 # alias rezsh="source $HOME/.zshenv && source $HOME/.zshrc" # reload zsh profile
-alias rm='echo Use `trash` unless `rm` is needed. If so, use the full path `/bin/rm` or `\rm`' # hide rm functionality to decrease bad habits; use trash-cli instead
+alias rm='echo Use "trash" unless "rm" is needed. If so, use the full path "/bin/rm" or "\rm"' # hide rm functionality to decrease bad habits; use trash-cli instead
 alias grep='rg' # https://github.com/BurntSushi/ripgrep
 alias ls='lsd -FAh' # https://github.com/Peltoche/lsd
 alias cat='bat' # https://github.com/sharkdp/bat

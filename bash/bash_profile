@@ -1,7 +1,11 @@
 ##### BASHRC #####
+if [ "$(uname)" == 'Darwin' ]; then
+	export BASH_SILENCE_DEPRECATION_WARNING=1 
+fi
 if [ -f $HOME/.bashrc ]; then
         source $HOME/.bashrc
 fi
 
 # Execute MOTD
 sh $DOTFILES/bin/motd.sh
+

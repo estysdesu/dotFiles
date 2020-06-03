@@ -7,7 +7,6 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
-sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -17,11 +16,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-HOSTNAME="TSE-MBP17-Ross"
-#sudo scutil --set ComputerName "$HOSTNAME"
-#sudo scutil --set HostName "$HOSTNAME"
-#sudo scutil --set LocalHostName "$HOSTNAME"
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$HOSTNAME"
+HOSTNAME="TSE-MBP141-Ross"
+scutil --set ComputerName "$HOSTNAME"
+scutil --set HostName "$HOSTNAME"
+scutil --set LocalHostName "$HOSTNAME"
+defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$HOSTNAME"
 
 # Set Dark theme
 defaults write 'Apple Global Domain' AppleInterfaceStyle -string 'Dark'

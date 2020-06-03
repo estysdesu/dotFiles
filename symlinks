@@ -1,0 +1,67 @@
+#!/usr/bin/env sh
+##### ##### ##### ##### ##### ##### ##### #####
+##### SYMLINK SETUP                       #####
+##### ##### ##### ##### ##### ##### ##### #####
+
+. ./env
+mkdir -p "$XDG_CONFIG_HOME"
+mkdir -p "$XDG_DATA_HOME"
+
+##### ALACRITTY #####
+mkdir -p "$XDG_CONFIG_HOME/alacritty"
+ln -sfn "$DOTFILES/alacritty" "$XDG_CONFIG_HOME/alacritty"
+
+##### BASH #####
+ln -sf "$DOTFILES/bash/profile" "$HOME/.profile"
+
+##### BIN (USER) #####
+ln -sfn "$DOTFILES/bin" "$HOME/bin"
+
+##### BIN (USER) #####
+ln -sf "$DOTFILES/env" "$HOME/.env"
+
+##### HOMEBREW #####
+ln -sf "$DOTFILES/homebrew/Brewfile" "$HOME/"
+
+##### GIT #####
+mkdir -p "$XDG_CONFIG_HOME/git"
+ln -sfn "$DOTFILES/git" "$XDG_CONFIG_HOME/git"
+
+##### LEPTON #####
+ln -sf "$HOME/dotFiles/lepton/.leptonrc" "$HOME/"
+
+##### NEOFETCH #####
+mkdir -p "$XDG_CONFIG_HOME/neofetch"
+ln -sfn "$DOTFILES/neofetch" "$XDG_CONFIG_HOME/neofetch"
+
+##### NODE #####
+ln -sf "$DOTFILES/node/.npmrc" "$HOME/"
+
+##### PRUSA SLICER #####
+mkdir -p "$HOME/Library/Application Support/PrusaSlicer"
+for DIR in 'printer print filament'; do
+		ln -sfn "$DOTFILES/prusaSlicer/$DIR" "$HOME/Library/Application Support/PrusaSlicer/"
+done
+# ln -sfn "$DOTFILES"/prusaSlicer/{printer,'print',filament} "$HOME/Library/Application Support/PrusaSlicer/"
+
+##### SKHD #####
+mkdir -p "$XDG_CONFIG_HOME/skhd"
+ln -sfn "$DOTFILES/skhd" "$XDG_CONFIG_HOME/skhd"
+
+##### TMUX #####
+ln -sf "$DOTFILES/tmux/.tmux.conf" "$HOME/"
+
+##### NEOVIM #####
+ln -sfn "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
+
+##### VS CODE INSIDERS #####
+mkdir -p "$HOME/Library/Application Support/Code - Insiders/User"
+for FILE in 'settings.json keybindings.json'; do
+		ln -sf "$DOTFILES/vscode/$FILE" "$HOME/Library/Application Support/Code - Insiders/User/"
+done
+ln -sfn "$DOTFILES/vscode/snippets" "$HOME/Library/Application Support/Code - Insiders/User/snippets"
+# ln -sf "$DOTFILES"/vscode/{settings.json,keybindings.json} "$HOME/Library/Application Support/Code - Insiders/User/"
+
+##### YABAI #####
+mkdir -p "$XDG_CONFIG_HOME/yabai"
+ln -sfn "$DOTFILES/yabai" "$XDG_CONFIG_HOME/yabai"
