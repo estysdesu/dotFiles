@@ -1,20 +1,12 @@
-.PHONY: brew-update brew-install git-update sym-refresh
+.PHONY: git-update sym-refresh
 
-update: brew-update git-update sym-refresh
-
-brew-update:
-	@echo "Updating Brewfile with all current Homebrew packages..."
-	@brew bundle dump --force
-
-brew-install:
-	@echo "Installing Homebrew packages in Brewfile..."
-	@brew bundle 
+update: git-update sym-refresh
 
 git-update:
-	@echo "Updating dotFiles github repository..."
+	@echo 'Updating dotFiles github repository...'
 	@-(git add . && git commit -m "update dotfiles from make" && git push) > /dev/null 2>&1
 
 sym-refresh:
-	@echo "Refreshing all symlinks..."
-	@sh ./symLinks > /dev/null 2>&1
+	@echo 'Refreshing all symlinks...'
+	@sh ./symLinks.sh > /dev/null 2>&1
 

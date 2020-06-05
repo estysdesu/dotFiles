@@ -28,12 +28,13 @@ silent() {
 # XDG Dirs
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # Dots
 export DOTFILES="$HOME/dotFiles"
 
 # OneDrive
-export ONEDRIVE="$HOME/OneDrive - University of Cincinnati"
+#export ONEDRIVE="$HOME/OneDrive - University of Cincinnati"
 
 # Editor
 alias vim="nvim"
@@ -48,8 +49,11 @@ if [ -n "$TMUX" ]; then
 	fi
 fi
 
+# Bin (user)
+path_munge "$HOME/bin" before
+
 # Homebrew
-if [ -n "$(which brew)" ]; then
+if [ -x "$(which brew)" ]; then
 	export HOMEBREW_AUTO_UPDATE_SECS=604800 # homebrew only update once a week
 	BREW_PRE="$(brew --prefix)"
 	BREW_OPT="$BREW_PRE/opt"
@@ -72,11 +76,10 @@ if [ -n "$(which brew)" ]; then
 	path_munge "$GOPATH/bin" after # Go
 	path_munge "$HOME/.cargo/bin" after # Rust & Cargo
 fi
-path_munge "$HOME/bin" before
 
 ##### INITIALIZE #####
 # Homebrew
-if [ -n "$(which brew)" ]; then
+if [ -x "$(which brew)" ]; then
 	eval "$(register-python-argcomplete pipx)" # pipx
 	eval "$(pyenv init -)" # pyenv
 	eval "$(pyenv virtualenv-init -)" # pyenv-virtualenv

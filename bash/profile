@@ -3,28 +3,23 @@
 ##### ##### ##### ##### ##### ##### ##### #####
 
 set -o posix
+set -o vi
 export ENV="$HOME/dotFiles/env"
 . "$HOME/dotFiles/env"
 
 ##### ALIASES & GLOBALS #####
-alias rebash="PATH='' && unalias -a && source $HOME/.profile" # reload bash profile
-alias grep=rg # alias grep='grep --color' # colorize grep match
-alias ls='lsd -alF' # alias ls='ls -GFh'
-alias cat=bat
+alias ls='ls -aFh --color=auto'
+alias lsd='lsd -aFh' 
+#alias cat=bat
+#alias grep=rg # alias grep='grep --color' # colorize grep match
+alias rebash="PATH='' && unalias -a && . $HOME/.profile" # reload bash profile
 alias ppPATH="echo $PATH | tr -s ':' '\n'"
 alias cincyWttr="curl https://wttr.in/Cincinnati"
 
 ##### PROMPT #####
 export CLICOLOR=1 # prompt change to colorized
 export LSCOLORS=exfxcxdxbxegedabagacad # default
-function update_prompt() {
-	PS1="\[$(tput setaf 3)\][\w]\[$(tput sgr0)\]\n\[$(tput setaf 4)\]\u\[$(tput sgr0)\]@\[$(tput setaf 2)\]\h\[$(tput sgr0)\] \$ \[$(tput sgr0)\]"
-	if [ -n "$VIRTUAL_ENV" ]; then
-		PS1="($(basename $VIRTUAL_ENV)) $PS1"
-	fi
-}
-export -f update_prompt
-export PROMPT_COMMAND='update_prompt'
+export PS1="\[$(tput setaf 3)\][\w]\[$(tput sgr0)\]\n\[$(tput setaf 4)\]\u\[$(tput sgr0)\]@\[$(tput setaf 2)\]\h\[$(tput sgr0)\] \$ \[$(tput sgr0)\]"
 
-# Execute MOTD
-"$HOME/bin/motd"
+##### MOTD #####
+motd
