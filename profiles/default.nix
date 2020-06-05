@@ -11,14 +11,12 @@
   ########## ########## ########## ########## ##########
   environment.systemPackages = with pkgs; [
     bash
-    zsh
-    wget
     curl
-    vim
-    tmux
     git
     mkpasswd
+    tmux
     tree
+    vim
+    wget
   ];
-  programs.zsh.enable = true;
 }

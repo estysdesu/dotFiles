@@ -37,6 +37,11 @@
   };
 
   ########## ########## ########## ########## ##########
+  ########## NIXPKGS
+  ########## ########## ########## ########## ##########
+  nixpkgs.config.allowUnfree = true;
+
+  ########## ########## ########## ########## ##########
   ########## LANGUAGE & TIME
   ########## ########## ########## ########## ##########
   i18n.defaultLocale = "en_US.UTF-8";
@@ -44,7 +49,7 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-  time.timeZone = "America/Indianapolis";
+  time.timeZone = "America/Indiana/Indianapolis";
  
   ########## ########## ########## ########## ##########
   ########## SECURITY

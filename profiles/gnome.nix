@@ -8,6 +8,6 @@
     desktopManager.gnome3.enable = true;
   };
 
-  environment.gnome3.excludePackages = [ ephiphany ];
+  # environment.gnome3.excludePackages = [ ephiphany ];
   environment.systemPackages = with pkgs; [ firefox ];
 }

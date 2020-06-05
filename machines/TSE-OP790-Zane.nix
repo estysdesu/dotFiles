@@ -27,18 +27,17 @@
   ########## ########## ########## ########## ##########
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/a7c7f043-f2bf-4ccf-b15e-447dd8ceba82"; # device = "/dev/disk/by-label/nixos";
+      device = "/dev/disk/by-uuid/a7c7f043-f2bf-4ccf-b15e-447dd8ceba82";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/0635-8914"; # device = "/dev/disk/by-label/boot";
+      device = "/dev/disk/by-uuid/0635-8914";
       fsType = "vfat";
     };
   };
-  swapDevices = [ {
-    device = "/swapfile";
-    size = 8192; # MiB
-  } ];
+  swapDevices = [ 
+    { device = "/swapfile"; }
+  ];
 
   ########## ########## ########## ########## ##########
   ########## NETWORKING
