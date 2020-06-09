@@ -83,11 +83,6 @@ done
 # install jupyter and its environment packages
 # sh $dotFilesLocalURL/python/jupyterEnv/jupyterVenv.sh
 
-# install vscode extensions
-for EXT in $(cat "$DF_LOCAL_PATH/vscode/extensions.txt"); do
-    code-insiders --install-extension "$EXT"
-done
-
 # install vim-plug and plugins
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

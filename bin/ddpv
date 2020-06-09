@@ -2,7 +2,7 @@
 # vim: syntax=sh
 
 set -e # set -o errexit
-set -u # set -o nounset
+# set -u # set -o nounset
 # set -x # set -o xtrace
 
 function ddpv {
@@ -23,13 +23,13 @@ function ddpv {
 	if [ ! -e "$FILENAME_IN" ]; then
 		printf "ddpv: ERROR: test -e $FILENAME_IN No such file or directory\n"
 		exit 1
-	elif [ ! -e "$FILENAME_OUT" ]; then
-		printf "ddpv: ERROR: test -e $FILENAME_OUT No such file or directory\n"
-		exit 1
+	# elif [ ! -e "$FILENAME_OUT" ]; then
+	# 	printf "ddpv: ERROR: test -e $FILENAME_OUT No such file or directory\n"
+	# 	exit 1
     fi
 
 	SIZE=$(stat --format=%s "$FILENAME_IN")
-	if [ -z "$3" ]; then
+	if [ -n "$3" ]; then
 		SIZE="$3"
 	fi
     

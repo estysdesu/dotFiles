@@ -16,33 +16,36 @@ shift + cmd - l : yabai -m window --warp east
 
 # focus space with mission-control index #
 cmd - 1 : yabai -m space --focus 1
-cmd - 2 : yabai -m space --focus 2 || (yabai -m space --create && yabai -m space --focus 3)
+cmd - 2 : yabai -m space --focus 2 || (yabai -m space --create && yabai -m space --focus 2)
 cmd - 3 : yabai -m space --focus 3 || (yabai -m space --create && yabai -m space --focus 3)
+cmd - 4 : yabai -m space --focus 4 || (yabai -m space --create && yabai -m space --focus 4)
 
 # send window to space and follow focus
 shift + cmd - 1  : yabai -m window --space 1; yabai -m space --focus 1
 shift + cmd - 2  : yabai -m window --space 2; yabai -m space --focus 2
 shift + cmd - 3  : yabai -m window --space 3; yabai -m space --focus 3
+shift + cmd - 4  : yabai -m window --space 4; yabai -m space --focus 4
 
 # toggle window fullscreen
-cmd - f : yabai -m window --toggle zoom-fullscreen
+ctrl - f : yabai -m window --toggle zoom-fullscreen
 
 # rotate tree
-cmd - r : yabai -m space --rotate 90
+ctrl - r : yabai -m space --rotate 90
 
 # float / unfloat window and center on screen
-shift + cmd - f : yabai -m window --toggle float;\
+shift + ctrl - f : yabai -m window --toggle float;\
                   yabai -m window --grid 4:4:1:1:2:2
 
 # toggle window split type
-cmd - t : yabai -m window --toggle split
+ctrl - t : yabai -m window --toggle split
 
 # open terminal
-ctrl - t : /Applications/Alacritty.app/Contents/MacOS/alacritty
-ctrl - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+cmd - t : alacritty # -e 'tmux new-session'
+cmd - return : alacritty
 
-# open terminal
-ctrl - w : '/Applications/Brave Browser Beta.app/Contents/MacOS/Brave Browser Beta'
+# open web
+cmd - w : '/Applications/Brave Browser Beta.app/Contents/MacOS/Brave Browser Beta'
+shift + cmd - w : '/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox'
 
 # focus monitor
 # cmd - 1  : yabai -m display --focus 1
