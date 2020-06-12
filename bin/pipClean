@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-echo "$(`python3 -m pip list)" | python3 -m pip uninstall
