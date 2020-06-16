@@ -36,16 +36,13 @@ ctrl - r : yabai -m space --rotate 90
 shift + ctrl - f : yabai -m window --toggle float;\
                   yabai -m window --grid 4:4:1:1:2:2
 
-# toggle window split type
-ctrl - t : yabai -m window --toggle split
-
 # open terminal
-cmd - t : alacritty # -e 'tmux new-session'
+ctrl - t : alacritty # -e 'tmux new-session'
 #cmd - return : alacritty
 
 # open web
-cmd - w : '/Applications/Brave Browser Beta.app/Contents/MacOS/Brave Browser Beta'
-shift + cmd - w : '/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox'
+ctrl - w : '/Applications/Brave Browser Beta.app/Contents/MacOS/Brave Browser Beta'
+shift + ctrl - w : '/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox'
 
 #.blacklist [ ]
 
@@ -67,3 +64,6 @@ shift + cmd - w : '/Applications/Firefox Developer Edition.app/Contents/MacOS/fi
 
 # balance size of windows
 # shift + ctrl - b : yabai -m space --balance
+
+# toggle window split type
+# ctrl - t : yabai -m window --toggle split
