@@ -13,6 +13,6 @@
   system.autoUpgrade = lib.mkForce {
     enable = true;
     allowReboot = true;
-    channel = "https://nixos.org/channels/nixos-unstable";
+    channel = "https://nixos.org/channels/nixos-20.03";
   };
 }
