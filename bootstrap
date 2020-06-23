@@ -1,0 +1,137 @@
+#!/usr/bin/env sh
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### CONFIG                              #####
+##### ##### ##### ##### ##### ##### ##### #####
+USERNAME='estysdesu'
+HOSTNAME='TSE-Nanode-Bennett'
+GITHUB_USERNAME="$USERNAME" # used for public keys
+UID=5000
+GID=5000
+WIRED=1
+WIRED_INTERFACE='e*'
+WIRELESS=0
+WIRELESS_INTERFACE='w*'
+WIRELESS_SSID=''
+WIRELESS_PASSWD=''
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### SETUP                               #####
+##### ##### ##### ##### ##### ##### ##### #####
+[ "$(id -u)" -eq 0 ] || { printf 'This script must be run as the root user\n'; exit 1; }
+apt -qq update && apt -qq upgrade -y
+
+printf "[ -d /usr/sbin ] && export PATH=$PATH:/usr/sbin\n" >> /etc/skel/.bashrc
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### CREATE USER                         #####
+##### ##### ##### ##### ##### ##### ##### #####
+apt -qq install -y sudo
+groupadd -f --system wheel
+useradd -m -s /bin/bash -G wheel -u $UID -g $GID "$USERNAME"
+printf "%s ALL=(ALL) NOPASSWD: ALL\n" "$USERNAME" > "/etc/sudoers.d/${USERNAME}"
+printf 'PermitRootLogin no\n' > /etc/ssh/sshd_config
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### SYSTEM PACKAGES                     #####
+##### ##### ##### ##### ##### ##### ##### #####
+apt -qq install -y --no-install-recommends \
+	neovim \
+	tmux \
+	wget \
+	curl \
+	apt-transport-https \
+	ca-certificates \
+	gnupg2 \
+	software-properties-common \
+	apache2-utils
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### NETWORKING                          #####
+##### ##### ##### ##### ##### ##### ##### #####
+printf "%s\n" "$HOSTNAME" > /etc/hostname
+
+#networkctl list
+[ -d /etc/network/interfaces ] && \
+	mv -f /etc/network/interfaces /etc/network/interfaces.bak
+[ -f /etc/resolv.conf ] && \
+	mv -f /etc/resolv.conf /etc/resolv.conf.bak
+[ -f /run/systemd/resolve/stub-resolv.conf ] && \
+	ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+if [ $WIRELESS -eq 1 ]; then
+	# interactive setup described @ https://wiki.archlinux.org/index.php/Wpa_supplicant
+	apt -qq install -y wpa_supplicant
+
+	wpa_passphrase "$WIRELESS_SSID" "$WIRELESS_PASSWD" \
+	> "/etc/wpa_supplicant/wpa_supplicant-${WIRELESS_INTERFACE}.conf"
+	systemctl enable "wpa_supplicant@${WIRELESS_INTERFACE}.conf"
+
+	cat << EOF > "/etc/systemd/network/01-${WIRELESS_INTERFACE}.network"
+[Match]
+Name=$WIRELESS_INTERFACE
+
+[Network]
+DHCP=true
+
+[DHCP]
+RouteMetric=20
+EOF
+fi
+
+if [ $WIRED -eq 1 ]; then
+	cat << EOF > "/etc/systemd/network/00-${WIRED_INTERFACE}.network"
+[Match]
+Name=$WIRED_INTERFACE
+
+[Network]
+DHCP=true
+
+[DHCP]
+RouteMetric=10
+EOF
+fi
+
+systemctl enable systemd-networkd.service systemd-resolved.service
+systemctl start systemd-networkd.service systemd-resolved.service
+
+apt -qq purge --autoremove -y ifupdown
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### SSH                                 #####
+##### ##### ##### ##### ##### ##### ##### #####
+KEY_URL="https://github.com/${GITHUB_USERNAME}.keys"
+SSH_KEY="$(wget -qO - $KEY_URL)"
+for USER in root $USERNAME; do
+	HOME_DIR="$(eval echo ~$USER)"
+	mkdir -p "$HOME_DIR/.ssh"
+	printf "%s\n" "$SSH_KEY" > "$HOME_DIR/.ssh/authorized_keys"
+	chown -R "$USER:$USER" "$HOME_DIR/.ssh"
+done
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### COCKPIT                             #####
+##### ##### ##### ##### ##### ##### ##### #####
+apt -qq install -y cockpit \
+	cockpit-bridge \
+	cockpit-dashboard \
+	cockpit-doc \
+	cockpit-docker \
+	cockpit-machines \
+	cockpit-networkmanager \
+	cockpit-packagekit \
+	cockpit-pcp \
+	cockpit-storaged
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### DOCKER                              #####
+##### ##### ##### ##### ##### ##### ##### #####
+apt -qq install -y docker.io \
+	docker-compose
+groupadd -f --system docker
+usermod -aG docker $USERNAME
+
+##### ##### ##### ##### ##### ##### ##### #####
+##### EXTRA                               #####
+##### ##### ##### ##### ##### ##### ##### #####
+./bootstrapNetworking

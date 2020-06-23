@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+INTERFACE='eth0'
+DNS_IP4='66.228.42.5'
+DNS_IP6='2600:3c03::5'
+GATE_IP4='23.239.15.1'
+PUB_IP4='23.239.15.176'
+GATE_IP6='fe80::1'
+PUB_IP6='2600:3c03::f03c:92ff:fe39:2850'
+
+cat << EOF > "/etc/systemd/network/00-${INTERFACE}.network"
+[Match]
+Name=$INTERFACE
+
+[Network]
+DHCP=no
+Domains=members.linode.com
+IPv6PrivacyExtensions=false
+
+# DNS resolvers (safe to mix IPv4 and IPv6)
+DNS=$DNS_IP4 $DNS_IP6
+
+# IPv4 gateway and primary address.
+Gateway=$GATE_IP4
+Address=${PUB_IP4}/24
+
+# IPv6 gateway and primary address.
+Gateway=$GATE_IP6
+Address=${PUB_IP6}/64
+EOF
