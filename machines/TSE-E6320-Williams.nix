@@ -9,12 +9,11 @@
   ########## ########## ########## ########## ##########
   boot = {
     loader = {
-      grub.enable = true;
-      grub.version = 2;
-      grub.device = "/dev/sda";
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
     };
     initrd = {
-      availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+      availableKernelModules = [ "ehci_pci" "ahci" "usb_storage" "sd_mod" "sdhci_pci" ];
       kernelModules = [ "dm-snapshot" ];
     };
     kernelModules = [ "kvm-intel" ];
@@ -27,32 +26,32 @@
   ########## FILESYSTEMS
   ########## ########## ########## ########## ##########
   fileSystems = {
-    "/" = { 
-      device = "/dev/disk/by-uuid/e4f33b12-9564-40e5-8ec7-497e1694c0a9";
-      fsType = "ext4";
-    };
-    "/data" = { 
-      device = "/dev/disk/by-uuid/37af03f8-e1ce-4ee0-89ec-bd40833aa859";
-      fsType = "ext4";
-    };
     "/boot" = {
-      device = "/dev/disk/by-uuid/90b20459-2889-4e01-8876-2b2cc7e5d8c4";
+      device = "/dev/disk/by-uuid/C652-2517";
+      fsType = "vfat";
+    };
+    "/" = { 
+      device = "/dev/disk/by-uuid/dbba4ed2-ab18-424a-8a29-2514aa3ac0f1";
       fsType = "ext4";
     };
+    #"/data" = { 
+    #  device = "/dev/disk/by-uuid/37af03f8-e1ce-4ee0-89ec-bd40833aa859";
+    #  fsType = "ext4";
+    #};
   };
   swapDevices = [ 
-    { device = "/dev/disk/by-uuid/c108bc67-b0c3-4b80-8682-d4fd88bd785c"; }
+    { device = "/dev/disk/by-uuid/960d7df7-768f-4769-9f50-6b7d86288fc2"; }
   ];
 
   ########## ########## ########## ########## ##########
   ########## NETWORKING
   ########## ########## ########## ########## ##########
   networking = {
-    hostName = "TSE-L502X-Pearson";
+    hostName = "TSE-E6320-Williams";
     useDHCP = false; # global flag is dep'd (per-instance useDHCP flag will be mandatory); therefore, explicitly set to false
     interfaces = {
-      enp6s0.useDHCP = true;
-      wlp3s0.useDHCP = true;
+      eno1.useDHCP = true;
+      wlp2s0.useDHCP = true;
     };
     firewall = {
       enable = true;
@@ -60,6 +59,12 @@
       # allowedUDPPorts = [ ... ];
     };
   };
-}
 
+  ########## ########## ########## ########## ##########
+  ########## SOUND
+  ########## ########## ########## ########## ##########
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
+}
 

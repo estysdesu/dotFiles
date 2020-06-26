@@ -2,7 +2,7 @@
 {
   imports = [ 
       ./configuration-base.nix
-      ./machines/TSE-L502X-Pearson.nix
+      ./machines/TSE-E6320-Williams.nix
       ./roles/workstation.nix
   ];
   

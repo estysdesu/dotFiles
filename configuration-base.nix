@@ -5,7 +5,6 @@
   ########## IMPORTS
   ########## ########## ########## ########## ##########
   imports = [
-    ./profiles/default.nix
     ./services/default.nix
     ./users/estysdesu.nix
   ];
@@ -32,8 +31,8 @@
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
-    buildCores = 4; # speed up dev at cost of possible build race conditions
-    maxJobs = lib.mkDefault 4;
+    buildCores = 2; # speed up dev at cost of possible build race conditions
+    maxJobs = lib.mkDefault 2;
   };
 
   ########## ########## ########## ########## ##########

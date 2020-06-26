@@ -1,4 +1,6 @@
 { config, pkgs, ... }:
 {
-  import = [ ];
+  import = [
+    ./systemPackages.nix
+  ];
 }
