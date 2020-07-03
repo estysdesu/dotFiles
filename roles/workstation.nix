@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./systemPackages.nix
+    ../sysPackages.nix
+    ../x11SysPackages.nix
     ../services/networkManager.nix
     #../services/plex.nix
     ../services/printing.nix
@@ -12,8 +13,8 @@
 
   users.extraUsers.estysdesu.extraGroups = [ "networkmanager" "plex" "vboxusers" "docker" ];
 
-  environment.systemPackages = with pkgs; [
-    firefox
+  fonts.fonts = with pkgs; [
+    font-awesome
   ];
 
 }

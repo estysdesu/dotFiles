@@ -34,10 +34,10 @@
       device = "/dev/disk/by-uuid/dbba4ed2-ab18-424a-8a29-2514aa3ac0f1";
       fsType = "ext4";
     };
-    #"/data" = { 
-    #  device = "/dev/disk/by-uuid/37af03f8-e1ce-4ee0-89ec-bd40833aa859";
-    #  fsType = "ext4";
-    #};
+    "/data" = { 
+      device = "/dev/disk/by-uuid/a2aeed8d-eab9-4885-9ad1-b63653b6f29a";
+      fsType = "ext4";
+    };
   };
   swapDevices = [ 
     { device = "/dev/disk/by-uuid/960d7df7-768f-4769-9f50-6b7d86288fc2"; }
@@ -65,6 +65,11 @@
   ########## ########## ########## ########## ##########
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
+  ########## ########## ########## ########## ##########
+  ########## BLUETOOTH
+  ########## ########## ########## ########## ##########
+  hardware.bluetooth.enable = true;
 
 }
 

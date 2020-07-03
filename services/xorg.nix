@@ -4,25 +4,30 @@
     enable = true;
     layout = "us";
     libinput.enable = true; # touchpad
-
+   
+    #displayManager.defaultSession = "plasma5";
+    
     ##### ##### ##### ##### ##### ##### ##### #####
     ##### AWESOME                             #####
     ##### ##### ##### ##### ##### ##### ##### #####
-    #  displayManager.defaultSession = "none+awesome";
-    #  windowManager.awesome.enable = true;
+    #windowManager.awesome.enable = true;
   
     ##### ##### ##### ##### ##### ##### ##### #####
     ##### BSPWM                               #####
     ##### ##### ##### ##### ##### ##### ##### #####
-    #  #displayManager.defaultSession = "none+bspwm";
-    #  displayManager.sddm.enable = true;
-    #  windowManager.bspwm.enable = true;
+    #windowManager.bspwm = {
+    #  enable = true;
+    #  configFile = ../config/bspwm/bspwmrc;
+    #  sxhkd.configFile = ../config/sxhkd/sxhkdrc;
+    #  #configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/bspwmrc";
+    #  #sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
+    #};
   
     ##### ##### ##### ##### ##### ##### ##### #####
     ##### GNOME                               #####
     ##### ##### ##### ##### ##### ##### ##### #####
-    #  displayManager.gdm.enable = true;
-    #  desktopManager.gnome3.enable = true;
+    #displayManager.gdm.enable = true;
+    #desktopManager.gnome3.enable = true;
   
     ##### ##### ##### ##### ##### ##### ##### #####
     ##### KDE PLASME                          #####
