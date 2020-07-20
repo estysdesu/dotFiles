@@ -38,11 +38,16 @@ EOF
 # Telegram
 dnf in -yq https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+# Keeper
+KEEPER_VERS='14.14.1'
+wget -qO '/tmp/keeperPasswordManager.rpm' "https://www.keepersecurity.com/desktop_electron/Linux/repo/rpm/keeperpasswordmanager-$KEEPER_VERS-1.x86_64.rpm"
+
 dnf check-update -yq
 dnf in -yq alacritty \
 	brave-browser-nightly \
 	code-insiders \
 	telegram-desktop
+dnf in -yq '/tmp/keeperPasswordManager.rpm'
 dnf rm -yq firefox
 
 ##### ##### ##### ##### ##### ##### ##### #####
