@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 ##### GLOBAL ENV #####
 
 ##### FUNCTIONS #####
@@ -32,9 +33,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # Dots
 export DOTFILES="$HOME/dotFiles"
-
-# OneDrive
-#export ONEDRIVE="$HOME/OneDrive - University of Cincinnati"
 
 # Editor
 alias vim="nvim"
@@ -74,7 +72,7 @@ if [ -x "$(which brew)" ]; then
 	export GOPATH="$HOME/.go" # Go
 	path_munge "$GOROOT/bin" after # Go
 	path_munge "$GOPATH/bin" after # Go
-	path_munge "$HOME/.cargo/bin" after # Rust & Cargo
+	. "$HOME/.cargo/env" # Rust & Cargo (automatically source ~/.cargo/bin and any others
 fi
 
 ##### INITIALIZE #####
@@ -85,3 +83,9 @@ if [ -x "$(which brew)" ]; then
 	eval "$(pyenv virtualenv-init -)" # pyenv-virtualenv
 	export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
+
+# Nix 
+if [ -e '/nix' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+

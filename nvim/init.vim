@@ -8,6 +8,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'integralist/vim-mypy', { 'for': 'python' }
 Plug 'psf/black', { 'for': 'python' }
+Plug 'LnL7/vim-nix' ", { 'for': 'nix' }
 call plug#end()
 
 let g:goyo_width = '90%'

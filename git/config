@@ -3,7 +3,7 @@
 	email = estysdesu@gmail.com
 	username = estysdesu
 [core]
-	excludesfile = $HOME/.config/git/ignore
+	excludesfile = /Users/estysdesu/Projects/dotFiles/git/ignore
 	editor = vim
 [filter "lfs"]
 	clean = git-lfs clean -- %f

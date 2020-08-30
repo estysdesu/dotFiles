@@ -3,9 +3,9 @@
 ##### ##### ##### ##### ##### ##### ##### #####
 
 set -o posix
-set -o vi
+#set -o vi
 export ENV="$HOME/dotFiles/env"
-. "$HOME/dotFiles/env"
+. "$ENV"
 
 ##### ALIASES & GLOBALS #####
 alias ls='ls -aFh --color=auto'
@@ -22,4 +22,5 @@ export LSCOLORS=exfxcxdxbxegedabagacad # default
 export PS1="\[$(tput setaf 3)\][\w]\[$(tput sgr0)\]\n\[$(tput setaf 4)\]\u\[$(tput sgr0)\]@\[$(tput setaf 2)\]\h\[$(tput sgr0)\] \$ \[$(tput sgr0)\]"
 
 ##### MOTD #####
-motd
+#motd
+

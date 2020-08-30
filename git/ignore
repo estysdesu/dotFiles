@@ -1,27 +1,27 @@
 # Misc #
 ###################
 .env
-.vscode/
+**/.vscode/
 *.swp
 
 # Go #
 ###################
-vendor/
+**/vendor/
 
 # JS #
 ###################
-node_modules/
+**/node_modules/
 
 # Python #
 ###################
-venv/
-*env/
-.pynb_checkpoints/
-.ipynb_checkpoints/
+**/venv/
+**/*env/
+**/.pynb_checkpoints/
+**/.ipynb_checkpoints/
 *.pyc
-__pycache__/
-.mypy_cache/
-*.egg-info/
+**/__pycache__/
+**/.mypy_cache/
+**/*.egg-info/
 
 # Compiled source #
 ###################

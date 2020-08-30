@@ -270,7 +270,7 @@ live_config_reload: true
 shell:
   program: /usr/local/bin/bash
   args:
-    - --login 
+    - -l 
     - -c
     - 'tmux attach -t base || tmux new -s base'
 
